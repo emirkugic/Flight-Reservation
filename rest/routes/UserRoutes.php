@@ -1,44 +1,25 @@
 <?php
 
-Flight::route('GET /users', function () {
-    Flight::json(Flight::userService()->get_all());
-});
-
-
-Flight::route('GET /users/@id', function ($id) {
-    Flight::json(Flight::userService()->get_by_id($id));
-});
-
-
-Flight::route('GET /users/@firstName/@lastName', function ($firstName, $lastName) {
-    Flight::json(Flight::userService()->getUserByFirstNameAndLastName($firstName, $lastName));
-});
-
-
-Flight::route('POST /users', function () {
-    $data = Flight::request()->data->getData();
-    Flight::json(Flight::userService()->add($data));
-});
-
-
-Flight::route('PUT /users/@id', function ($id) {
-    $data = Flight::request()->data->getData();
-    Flight::userService()->update($id, $data);
-    Flight::json(Flight::userService()->get_by_id($id));
-});
-
-
-Flight::route('DELETE /users/@id', function ($id) {
-    Flight::userService()->delete($id);
-});
-
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 Flight::route('POST /users/login', function () {
-    $data = Flight::request()->data->getData();
-    $user = Flight::userService()->get_by_email_and_password($data['email'], $data['password']);
-    if ($user) {
-        Flight::json($user);
+    $login = Flight::request()->data->getData();
+    $user = Flight::userService()->login($login['email']);
+
+    if (count($user) > 0) {
+        $user = $user[0];
+    }
+
+    if (isset($user['id'])) {
+        if ($user['password'] == $login['password']) {
+            unset($user['password']);
+            $jwt = JWT::encode($user, Config::JWT_SECRET(), 'HS256');
+            Flight::json(["message" => "Login successful", "token" => $jwt], 200);
+        } else {
+            Flight::json(["message" => "Wrong password"], 404);
+        }
     } else {
-        Flight::halt(404, 'User not found');
+        Flight::json(["message" => "User doesn't exist"], 404);
     }
 });

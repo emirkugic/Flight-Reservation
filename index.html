@@ -12,14 +12,8 @@
 		<!-- fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;400;600&family=Pavanam&family=Poppins:wght@200;400;700&display=swap"
-			rel="stylesheet"
-		/>
-		<script
-			src="https://kit.fontawesome.com/c4254e24a8.js"
-			crossorigin="anonymous"
-		></script>
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;400;600&family=Pavanam&family=Poppins:wght@200;400;700&display=swap" rel="stylesheet" />
+		<script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
 
 		<!-- jquery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -63,10 +57,17 @@
 				<section id="homepage"></section>
 				<section id="hotels"></section>
 				<section id="cars"></section>
-			</main>
+			  </main>
 		</div>
 
 		<script src="assets/js/navigation.js"></script>
 		<script src="assets/js/flight-form.js"></script>
+		<script type="text/javascript">
+			var token = localStorage.getItem("user_token");
+			if (!token) {
+				window.location.replace("login.html");
+			}
+		</script>
+
 	</body>
 </html>
