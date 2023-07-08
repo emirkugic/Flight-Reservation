@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- css files -->
+		<link rel="stylesheet" href="assets/style/spapp.css" />
+		<link rel="stylesheet" href="assets/style/style.css" />
+
+		<!-- fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;400;600&family=Pavanam&family=Poppins:wght@200;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/c4254e24a8.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!--spapp script-->
+		<script src="assets/js/jquery.spapp.js"></script>
+		<script src="assets/js/custom.js"></script>
+
+		<title>HighAir</title>
+		<link rel="icon" href="assets/img/logo-notext.png" />
+	</head>
+	<body>
+		<nav class="main-navigation">
+			<img src="assets/img/logo.svg" alt="Logo" class="img-logo" />
+			<img
+				src="assets/img/mobile-logo.png"
+				alt="Logo"
+				class="img-logo mobile-logo"
+			/>
+			<ul>
+				<li><a href="#hotels">Hotels</a></li>
+				<li><a href="#cars">Cars</a></li>
+				<li><a href="login.html">Sign In</a></li>
+				<li>
+					<span class="signup.html"><a href="#">Sign Up</a></span>
+				</li>
+			</ul>
+			<div class="hamburger-menu">&#9776;</div>
+			<div class="mobile-menu">
+				<ul>
+					<li><a href="index.html">Homepage</a></li>
+					<li><a href="#hotels">Hotels</a></li>
+					<li><a href="#cars">Cars</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- main content to be displayed by spapp -->
+		<div class="main-content">
+			<main id="spapp" role="main">
+				<section id="homepage"></section>
+				<section id="hotels"></section>
+				<section id="cars"></section>
+			</main>
+		</div>
+
+		<script src="assets/js/navigation.js"></script>
+		<script src="assets/js/flight-form.js"></script>
+	</body>
+</html>

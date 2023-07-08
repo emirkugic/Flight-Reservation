@@ -1,0 +1,263 @@
+.banner-hotel {
+    background-image: url("../img/hotels.png");
+    color: #fff;
+    text-align: center;
+    font-family: 'Fira Sans Condensed';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    position: absolute;
+    right: 0; 
+    left: 0;
+}
+
+.banner-hotel h1, .banner-hotel h3 {
+    position: relative;
+    top: 60px;
+}
+
+.hotel-form {
+    position: relative;
+    top: 250px;
+    margin: auto;
+    width: fit-content;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(39, 35, 46, 0.47);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.hotel-form .partnership {
+    display: flex;
+    width: fit-content;
+}
+
+.hotel-form .partnership img {
+    width: 30px;
+    height: auto;
+}
+
+.hotel-form .partnership p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--font-color);
+}
+
+.hotel-form .partnership span {
+    color: var(--primary-color-1);
+}
+
+.hotel-form form {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.hotel-form .hotel-first-row, .hotel-form .hotel-second-row {
+    display: flex;
+}
+
+.hotel-form .hotel-input-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+.hotel-form input, .hotel-form select {
+    width: 268px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid rgba(38, 35, 46, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 3px;
+    background-color: transparent;
+}
+
+.hotel-form #rooms {
+    margin-right: 0;
+}
+
+.hotel-form .hotel-label, .hotel-form .select-label {
+    background-color: transparent;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--font-color);
+    position: absolute;
+}
+
+input:not(:focus):placeholder-shown + .hotel-label {
+    pointer-events: none;
+    top: 13px;
+    left: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus + .hotel-label,
+input:not(:placeholder-shown) + .hotel-label {
+    background-color: #fff;
+    pointer-events: none;
+    top: -12px;
+    left: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="date"], .hotel-select-label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--font-color);
+    font-size: 16px;
+}
+
+.hotel-select-label {
+    background-color: #fff;
+    position: absolute;
+	pointer-events: none;
+    top: -12px;
+    left: 15px;
+    font-size: 16px;
+}
+
+.search-hotel-btn {
+	display: flex;
+    height: 50px;
+	align-items: center;
+	white-space: nowrap;
+    position: relative;
+    top: 19px;
+    left: 60px;
+}
+
+.search-hotel-btn-icon {
+	width: 18px;
+	height: auto;
+	margin-right: 10px;
+}
+
+.hotel-offers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    top: 420px;
+}
+
+.hotel-offers .hotel-offer {
+    width: 350px;
+    font-family: 'Pavanam';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: justify;
+    letter-spacing: 0.05em;
+    color: var(--font-color);
+    padding: 10px;
+    margin: 50px;
+}
+
+.hotel-offers .hotel-offer p {
+    width: 350px;
+}
+
+.hotel-offers .hotel-offer img {
+    display: block;
+    margin: auto;
+    width: 250px;
+    height: auto;
+}
+
+@media (max-width: 992px) {
+    .hotel-form .hotel-first-row, .hotel-form .hotel-second-row {
+        display: block;
+        margin: auto;
+    }
+
+    .hotel-form input, .hotel-form select {
+        margin: 0;
+        width: 400px;
+    }
+    
+    .partnership p {
+        font-size: 14px;
+        width: 350px;
+    }
+
+    .search-hotel-btn {
+        position: static;
+        margin: auto;
+    }
+
+    input:not(:focus):placeholder-shown + .hotel-label {
+        pointer-events: none;
+        top: 13px;
+        left: 15px;
+        font-size: 16px;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    input:focus + .hotel-label,
+    input:not(:placeholder-shown) + .hotel-label {
+        background-color: #fff;
+        pointer-events: none;
+        top: -12px;
+        left: 15px;
+        font-size: 16px;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+@media (max-width: 458px) {
+    .hotel-form .hotel-first-row, .hotel-form .hotel-second-row {
+        display: block;
+        margin: auto;
+    }
+
+    .hotel-banner-content h1 {
+        font-size: 30px;
+    }
+
+    .hotel-banner-content h3 {
+        font-size: 16px;
+    }
+
+    .hotel-form input, .hotel-form select {
+        width: 270px;
+    }
+    
+    .partnership p {
+        width: 240px;
+    }
+
+    .partnership img {
+        display: none;
+    }
+
+    .search-hotel-btn {
+        position: static;
+        margin: auto;
+    }
+    
+    .hotel-offers .hotel-offer {
+        width: 280px;
+    }
+    
+    .hotel-offers .hotel-offer p {
+        width: 280px;
+    }
+    
+    .hotel-offers .hotel-offer img {
+        width: 180px;
+        height: auto;
+    }
+}

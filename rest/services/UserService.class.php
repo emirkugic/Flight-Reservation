@@ -15,4 +15,9 @@ class UserService extends BaseService
     {
         return $this->dao->getUserByFirstNameAndLastName($firstName, $lastName);
     }
+
+    public function get_by_email_and_password($email, $password)
+    {
+        return $this->dao->get_by_email_and_password($email, $password);
+    }
 }

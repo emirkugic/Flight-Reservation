@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HighAir</title>
+    </head>
+
+    <body>
+        <section class="banner">
+            <div class="banner-content">
+                <h1>
+                    The sky is the limit, <br />
+                    we take you <span class="banner-highlight">higher</span>
+                </h1>
+            </div>
+        </section>
+        
+        <section class="form">
+            <input class="tab-radio" id="one" name="group" type="radio" checked />
+            <input class="tab-radio" id="two" name="group" type="radio" />
+            <input class="tab-radio" id="three" name="group" type="radio" />
+        
+            <div class="tabs">
+                <label class="tab" id="one-tab" for="one">
+                    <img src="assets/img/plane.png" alt="Logo" />
+                    Flight
+                </label>
+        
+                <label class="tab" id="two-tab" for="two">
+                    <img src="assets/img/seat.png" alt="Logo" />
+                    Manage Booking
+                </label>
+        
+                <label class="tab" id="three-tab" for="three">
+                    <img
+                        src="assets/img/flight-status.png"
+                        alt="Logo"
+                        class="status-icon"
+                    />
+                    Flight Status
+                </label>
+            </div>
+        
+            <div class="panels">
+                <div class="panel" id="one-panel">
+                    <div class="booking-form">
+                        <form>
+                            <div class="form-checkbox">
+                                <label for="roundtrip">
+                                    <input
+                                        type="radio"
+                                        id="roundtrip"
+                                        name="flight-type"
+                                        checked
+                                    />
+                                    <span></span>Return
+                                </label>
+        
+                                <label for="one-way">
+                                    <input type="radio" id="one-way" name="flight-type" />
+                                    <span></span>One way
+                                </label>
+                            </div>
+                        </form>
+        
+                        <form>
+                            <div class="form-inputs">
+                                <div class="first-row">
+                                    <div class="input-container">
+                                        <input
+                                            type="text"
+                                            id="from-input"
+                                            class="from-to"
+                                            placeholder=" "
+                                            required
+                                        />
+                                        <label for="from-input" class="form-label">From</label>
+                                    </div>
+            
+                                    <img src="assets/img/undo.png" alt="reverse choices" />
+            
+                                    <div class="input-container">
+                                        <input
+                                            type="text"
+                                            id="to-input"
+                                            class="from-to"
+                                            placeholder=" "
+                                            required
+                                        />
+                                        <label for="to-input" class="form-label">To</label>
+                                    </div>
+                                </div>
+            
+                                <div class="second-row">
+                                    <div class="first-column">
+                                        <div class="input-container">
+                                            <input
+                                                type="date"
+                                                id="departure-date"
+                                                placeholder=" "
+                                                required
+                                            />
+                                            <label for="departure-date" class="form-label">
+                                                Departure Date
+                                            </label>
+                                        </div>
+            
+                                        <div class="input-container" id="return-date-input">
+                                            <input
+                                                type="date"
+                                                id="return-date"
+                                                placeholder=" "
+                                                required
+                                            />
+                                            <label for="return-date" class="form-label">
+                                                Return Date
+                                            </label>
+                                        </div>
+                                    </div>
+            
+                                    <div class="second-column">
+                                        <div class="input-container">
+                                            <select id="passengers" placeholder=" " required>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                            <label for="passengers" class="select-label"
+                                                >Passengers</label
+                                            >
+                                        </div>
+            
+                                        <div class="input-container">
+                                            <select id="ticket-class" placeholder=" " required>
+                                                <option value="business">Business class</option>
+                                                <option value="economy">Economy class</option>
+                                            </select>
+                                            <label for="ticket-class" class="select-label"
+                                                >Ticket Class</label
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="third-row">
+                                    <button class="button search-btn" id="myButton2">
+                                        <img
+                                            src="assets/img/search.png"
+                                            alt="Right Arrow"
+                                            class="search-btn-icon"
+                                        />
+                                        Search Flights
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        
+                <div class="panel" id="two-panel">
+                    <div class="form-inputs">
+                        <div class="first-row">
+                            <div class="input-container">
+                                <input type="text" id="ticket-input" placeholder=" " required />
+                                <label for="from-input" class="form-label">Ticket Number</label>
+                            </div>
+        
+                            <div class="input-container">
+                                <input
+                                    type="text"
+                                    id="passenger-input"
+                                    placeholder=" "
+                                    required
+                                />
+                                <label for="to-input" class="form-label"
+                                    >Passenger's Last Name</label
+                                >
+                            </div>
+                        </div>
+        
+                        <div class="third-row">
+                            <button class="button retrieve-btn">
+                                Retrieve Booking
+                                <img
+                                    src="assets/img/right-arrow.png"
+                                    alt="Right Arrow"
+                                    class="retrieve-btn-icon"
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="panel" id="three-panel">
+                    <div class="form-inputs">
+                        <div class="first-row">
+                            <div class="input-container">
+                                <input type="text" id="flight-input" placeholder=" " required />
+                                <label for="from-input" class="form-label">Flight Number</label>
+                            </div>
+        
+                            <div class="input-container">
+                                <input type="text" id="status-input" placeholder=" " required />
+                                <label for="to-input" class="form-label">Status</label>
+                            </div>
+                        </div>
+        
+                        <div class="third-row">
+                            <button class="button retrieve-btn">
+                                Check Flight
+                                <img
+                                    src="assets/img/right-arrow.png"
+                                    alt="Right Arrow"
+                                    class="retrieve-btn-icon"
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

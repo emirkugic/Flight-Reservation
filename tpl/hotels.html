@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- css files -->
+		<link rel="stylesheet" href="assets/style/style.css" />
+        <link rel="stylesheet" href="assets/style/hotels.css" />
+
+		<!-- google fonts -->
+		<link rel="preconnect" href="assets/style/https://fonts.googleapis.com" />
+		<link rel="preconnect" href="assets/style/https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;400;600&family=Pavanam&family=Poppins:wght@200;400;700&display=swap" rel="stylesheet"/>
+
+		<script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<title>HighAir - Hotels</title>
+        <link rel="icon" href="assets/img/logo-notext.png">
+	</head>
+	<body>
+
+        <div class="banner banner-hotel">
+            <h1> FIND YOUR PERFECT STAY WITH EASE </h1>
+            <h3> Book with us and enjoy the best rates on hotels </h3>
+        </div>
+
+        <section class="hotel-form">
+            <div class="partnership">
+                <img src="assets/img/booking.png" alt="">
+                <p>In partnership with <span>Booking.com</span></p>
+            </div>
+            <form action="#">
+                <div class="hotel-first-row">
+                    <div class="hotel-input-container">
+                        <input type="text" id="destination" placeholder=" " required>
+                        <label for="destination" class="hotel-label">Destination</label>
+                    </div>
+
+                    <div class="hotel-input-container">
+                        <input type="date" id="in-date" placeholder=" " required>
+                        <label for="in-date" class="hotel-label"> Check-in Date </label>
+                    </div>
+
+                    <div class="hotel-input-container">
+                        <input type="date" id="out-date" placeholder=" " required>
+                        <label for="out-date" class="hotel-label"> Check-out Date </label>
+                    </div>
+                </div>
+
+                <div class="hotel-second-row">
+                    <div class="hotel-input-container">
+                        <select id="guests" placeholder=" " required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        </select>
+                        <label for="guests" class="hotel-select-label">Guests</label>
+                    </div>
+
+                    <div class="hotel-input-container">
+                        <select id="rooms" placeholder=" " required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        </select>
+                        <label for="rooms" class="hotel-select-label">Rooms</label>
+                    </div>
+
+                    <button class="button search-hotel-btn">
+                        <img src="assets/img/search.png" alt="Right Arrow" class="search-hotel-btn-icon" />
+                        Search Hotels
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="hotel-offers">
+            <div class="hotel-offer">
+                <img src="assets/img/hotel1.png" alt="">
+                <p>
+                    At HighAir , we value your flexibility when it comes to your travel plans. 
+                    That's why we offer easy and free cancellations and changes for hotel reservations made through our platform.  
+                    Modify your travel dates, switch hotels, or cancel your reservation without any additional fees. 
+                    We're here to provide the convenience you need for a stress-free trip. 
+                </p>
+            </div>
+
+            <div class="hotel-offer">
+                <img src="assets/img/hotel2.png" alt="">
+                <p>
+                    Experience exclusive privileges with HighAir for your hotel reservations. 
+                    Enjoy added benefits and perks at no extra cost throughout your entire trip. 
+                    Elevate your travel experience with HighAir's exceptional privileges.
+                </p>
+            </div>
+
+            <div class="hotel-offer">
+                <img src="assets/img/hotel3.png" alt="">
+                <p>
+                    Book with ease through HighAir, our partnership with booking.com. 
+                    Find the perfect hotel deal, enter your information, and effortlessly complete your reservation on booking.com. 
+                    Discover the best prices from multiple booking sites with HighAir and booking.com as your reliable travel companions.
+                </p>
+            </div>
+        </section>
+
+        <script src="assets/js/navigation.js"></script>
+        <script>
+			document.getElementById("homepage").onclick = function () {
+					location.href = "index.html";
+			};
+
+			document.getElementById("homepage-mobile").onclick = function () {
+					location.href = "index.html";
+			};
+		</script>
+
+    </body>
+</html>

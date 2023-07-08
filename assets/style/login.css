@@ -1,0 +1,200 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+.signup-form {
+    display: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	background: #dfdfdf;
+}
+.container {
+	position: relative;
+	max-width: 700px;
+	width: 500px;
+	background: #fff;
+	padding: 25px;
+	border-radius: 8px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* back arrow */
+.back-arrow {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.back-arrow img {
+	width: 25px;
+	height: 22px;
+}
+/* back arrow */
+
+.container h3 {
+	font-size: 22px;
+	color: #d64045;
+	font-weight: 600;
+	text-align: left;
+}
+.container h4 {
+	font-size: 16px;
+	color: rgba(38, 35, 46, 0.8);
+	font-weight: 400;
+	text-align: left;
+}
+
+/* icons */
+input[type="text"] {
+	background-image: url("../img/email.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: 23px 23px;
+	padding-left: 40px;
+	background-position: 10px center;
+}
+
+input[type="password"] {
+	background-image: url("../img/lock.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: 23px 23px;
+	padding-left: 40px;
+	background-position: 10px center;
+}
+/* icons */
+
+.container header {
+	font-size: 27.9px;
+	color: #d64045;
+	font-weight: 600;
+	text-align: center;
+}
+.container .form {
+	margin-top: 30px;
+}
+.form .input-box {
+	width: 100%;
+	margin-top: 20px;
+}
+.input-box label {
+	color: #333;
+}
+.form :where(.input-box input, .select-box) {
+	position: relative;
+	height: 50px;
+	width: 100%;
+	outline: none;
+	font-size: 1rem;
+	color: #707070;
+	margin-top: 8px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	padding: 0 15px;
+}
+.input-box input:focus {
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+	display: flex;
+	column-gap: 15px;
+}
+
+.address :where(input, .select-box) {
+	margin-top: 15px;
+}
+
+.form button {
+	height: 55px;
+	width: 100%;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 400;
+	margin-top: 25px;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	background: #d64045;
+	border-radius: 10px;
+}
+.form button:hover {
+	background: #be383d;
+}
+
+.form .google-signup {
+	height: 55px;
+	width: 100%;
+	color: rgba(38, 35, 46, 0.81);
+	font-size: 1rem;
+	font-weight: 600;
+	margin-top: 10px;
+	border: 1px solid #e9e9e9;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	background: #fff;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 20px;
+}
+
+.form .google-icon {
+	width: 29px;
+	height: 29px;
+	background-image: url(../img/google_icon.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	margin-right: 10px;
+}
+
+.form .google-signup:hover {
+	background: #f2f2f2;
+	border-color: #d0d0d0;
+}
+
+.bottom-text {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 16px;
+	color: rgba(38, 35, 46, 0.8);
+	font-weight: 400;
+}
+
+@media screen and (max-width: 500px) {
+	.form .column {
+		flex-wrap: wrap;
+	}
+}
+
+.forgot-password {
+	text-align: right;
+	padding-top: 15px;
+}
+
+/* nav bar */
+
+.input-box input.error {
+	border: 1px solid red !important;
+}
+
+.input-box input.valid {
+	border: 1px solid green !important;
+}
+
+label.error {
+	color: red;
+}

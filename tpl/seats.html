@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- css files -->
+		<link rel="stylesheet" href="assets/style/style.css" />
+		<link rel="stylesheet" href="assets/style/baggage.css" />
+		<link rel="stylesheet" href="assets/style/tickets.css" />
+		<link rel="stylesheet" href="assets/style/seats.css" />
+
+		<!-- google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;400;600&family=Pavanam&family=Poppins:wght@200;400;700&display=swap" rel="stylesheet" />
+
+		<script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- bootstrap -->
+		<link type="text/css" rel="stylesheet" href="assets/style/bootstrap.min.css" />
+
+		<title>Seat Selection</title>
+        <link rel="icon" href="assets/img/logo-notext.png">
+	</head>
+
+	<body>
+		<nav class="main-navigation">
+			<img src="assets/img/logo.svg" alt="Logo" class="img-logo" id="homepage"/>
+			<img src="assets/img/mobile-logo.png" alt="Logo" class="img-logo mobile-logo" id="homepage-mobile"/>
+			<ul>
+				<li><a href="#">Help</a></li>
+				<li><a href="hotels.html">Hotels</a></li>
+				<li><a href="cars.html">Cars</a></li>
+				<li><a href="signup.html">Sign In</a></li>
+				<li>
+					<span class="last-option"><a href="#">Sign Up</a></span>
+				</li>
+			</ul>
+			<div class="hamburger-menu">&#9776;</div>
+			<div class="mobile-menu">
+				<ul>
+					<li><a href="#">Homepage</a></li>
+					<li><a href="#">Help</a></li>
+					<li><a href="hotels.html">Hotels</a></li>
+					<li><a href="cars.html">Cars</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<section class="steps steps-seat">
+			<div class="step">
+				<img src="assets/img/steps-plane-active.png" alt="" />
+				<p>Flights</p>
+				<img src="assets/img/steps-divider.png" class="steps-divider" alt="" />
+			</div>
+
+			<div class="step active">
+				<img src="assets/img/steps-seat-inactive.png" alt="" />
+				<p>Seats</p>
+				<img src="assets/img/steps-divider.png" class="steps-divider" alt="" />
+			</div>
+
+			<div class="step">
+				<img src="assets/img/steps-bags-inactive.png" alt="" />
+				<p>Bags</p>
+				<img src="assets/img/steps-divider.png" class="steps-divider" alt="" />
+			</div>
+
+			<div class="step">
+				<img src="assets/img/steps-extras-inactive.png" alt="" />
+				<p>Extras</p>
+				<img src="assets/img/steps-divider.png" class="steps-divider" alt="" />
+			</div>
+
+			<div class="step">
+				<img src="assets/img/steps-review-inactive.png" alt="" />
+				<p>Review</p>
+			</div>
+		</section>
+
+		<div class="seat-direction">
+			<img src="assets/img/flight-icon.png" alt="flight icon" class="flight-icon" />
+			<p>Sarajevo to Amsterdam</p>
+		</div>
+
+		<div class="ticket seat-ticket">
+			<div class="time">
+				<p class="top date">15 April</p>
+
+				<p class="bottom day">Saturday</p>
+			</div>
+
+			<div class="direction">
+				<div class="departure">
+					<div class="top departure-time">
+						<p class="date">20:00</p>
+
+						<p class="bottom departure-city">Amsterdam</p>
+					</div>
+				</div>
+
+				<div class="flight-art">
+					<p>SA 143</p>
+					<img
+						src="assets/img/flight-direction.png"
+						alt="flight direction art"
+						class="flight-art-img"
+					/>
+					<p>3 hours 15 minutes</p>
+				</div>
+
+				<div class="destination">
+					<div class="top departure-time">
+						<p class="date">23:15</p>
+
+						<p class="bottom departure-city">Sarajevo</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="price">
+				<p class="value-fare">VALUE FARE</p>
+
+				<p class="value">$64.93</p>
+			</div>
+		</div>
+
+		<section class="seat-picker">
+			<div class="plane">
+				<div class="select"></div>
+				<ol>
+					<li>
+						<div class="business-class">
+							<p>BUSINESS</p>
+						</div>
+						<div class="bathrooms">
+							<img src="assets/img/bathroom.png" alt="" />
+							<img src="assets/img/bathroom.png" alt="" />
+						</div>
+					</li>
+
+					<li>
+						<ol class="seats">
+							<li class="seat">
+								<input type="checkbox" id="1A" />
+								<label for="1A">1A</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="1B" />
+								<label for="1B">1B</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="1C" />
+								<label for="1C">1C</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="1D" />
+								<label for="1D">1D</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="1E" />
+								<label for="1E">1E</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="1F" />
+								<label for="1F">1F</label>
+							</li>
+						</ol>
+					</li>
+					<div class="divider"></div>
+					<li>
+						<ol class="seats">
+							<li class="seat">
+								<input type="checkbox" id="2A" />
+								<label for="2A">2A</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="2B" />
+								<label for="2B">2B</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="2C" />
+								<label for="2C">2C</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="2D" />
+								<label for="2D">2D</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="2E" />
+								<label for="2E">2E</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="2F" />
+								<label for="2F">2F</label>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol class="seats">
+							<li class="seat">
+								<input type="checkbox" id="3A" />
+								<label for="3A">3A</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="3B" />
+								<label for="3B">3B</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="3C" />
+								<label for="3C">3C</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="3D" />
+								<label for="3D">3D</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="3E" />
+								<label for="3E">3E</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="3F" />
+								<label for="3F">3F</label>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol class="seats">
+							<li class="seat">
+								<input type="checkbox" id="4A" />
+								<label for="4A">4A</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="4B" />
+								<label for="4B">4B</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="4C" />
+								<label for="4C">4C</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="4D" />
+								<label for="4D">4D</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="4E" />
+								<label for="4E">4E</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="4F" />
+								<label for="4F">4F</label>
+							</li>
+						</ol>
+					</li>
+					<div class="divider"></div>
+					<div class="business-class">
+						<p>ECONOMY</p>
+					</div>
+					<li>
+						<ol class="seats">
+							<li class="seat">
+								<input type="checkbox" id="5A" />
+								<label for="5A">5A</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="5B" />
+								<label for="5B">5B</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="5C" />
+								<label for="5C">5C</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="5D" />
+								<label for="5D">5D</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="5E" />
+								<label for="5E">5E</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="5F" />
+								<label for="5F">5F</label>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol class="seats">
+							<li class="seat">
+								<input type="checkbox" id="6A" />
+								<label for="6A">6A</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="6B" />
+								<label for="6B">6B</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="6C" />
+								<label for="6C">6C</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="6D" />
+								<label for="6D">6D</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="6E" />
+								<label for="6E">6E</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="6F" />
+								<label for="6F">6F</label>
+							</li>
+						</ol>
+					</li>
+					<div class="divider"></div>
+					<li>
+						<ol class="seats">
+							<li class="seat">
+								<input type="checkbox" id="7A" />
+								<label for="7A">7A</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="7B" />
+								<label for="7B">7B</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="7C" />
+								<label for="7C">7C</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="7D" />
+								<label for="7D">7D</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="7E" />
+								<label for="7E">7E</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="7F" />
+								<label for="7F">7F</label>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol class="seats">
+							<li class="seat">
+								<input type="checkbox" id="8A" />
+								<label for="8A">8A</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="8B" />
+								<label for="8B">8B</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="8C" />
+								<label for="8C">8C</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="8D" />
+								<label for="8D">8D</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="8E" />
+								<label for="8E">8E</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="8F" />
+								<label for="8F">8F</label>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol class="seats">
+							<li class="seat">
+								<input type="checkbox" id="9A" />
+								<label for="9A">9A</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="9B" />
+								<label for="9B">9B</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="9C" />
+								<label for="9C">9C</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="9D" />
+								<label for="9D">9D</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="9E" />
+								<label for="9E">9E</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="9F" />
+								<label for="9F">9F</label>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol class="seats">
+							<li class="seat">
+								<input type="checkbox" id="10A" />
+								<label for="10A">10A</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="10B" />
+								<label for="10B">10B</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="10C" />
+								<label for="10C">10C</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="10D" />
+								<label for="10D">10D</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="10E" />
+								<label for="10E">10E</label>
+							</li>
+							<li class="seat">
+								<input type="checkbox" id="10F" />
+								<label for="10F">10F</label>
+							</li>
+						</ol>
+						<div class="bathrooms second-bathroom">
+							<img src="assets/img/bathroom.png" alt="" />
+							<img src="assets/img/bathroom.png" alt="" />
+						</div>
+					</li>
+				</ol>
+			</div>
+		</section>
+
+		<section class="floating-menu">
+			<div class="seat-options">
+				<div class="selection-menu">
+					<p class="seat-paragraph">SEAT</p>
+					<div class="seat-row">
+						<p class="seat-row-paragraph">ROW</p>
+						<p class="seat-row-value">E</p>
+					</div>
+					<div class="seat-number">
+						<p class="seat-number-paragraph">NUMBER</p>
+						<p class="seat-number-value">2</p>
+					</div>
+				</div>
+
+				<p class="additional-seat-fee">
+					Additional fee: <span class="additional-seat-fee-value"> $0.00 </span>
+				</p>
+			</div>
+
+			<div class="seat-navigation-options">
+				<p class="seat-back-button" id="backButton">Back</p>
+
+				<button class="button continue-seat-btn" id="myButton">
+					Continue
+					<img
+						src="assets/img/right-arrow.png"
+						alt="Right Arrow"
+						class="continue-seat-icon"
+					/>
+				</button>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<!-- subscription part -->
+			<div class="footer-right">
+				<div class="col-2">
+					<h3>Subscribe to our news letter</h3>
+					<h4>
+						Subscribe now to get our best deals delivered straight into your
+						inbox.
+					</h4>
+					<form>
+						<input type="email" , placeholder="Email address" required />
+						<br />
+						<button type="submit">SUBSCRIBE</button>
+					</form>
+
+					<div class="icons">
+						<i class="fa-brands fa-square-twitter"></i>
+						<i class="fa-brands fa-square-instagram"></i>
+						<i class="fa-brands fa-square-facebook"></i>
+						<i class="fa-brands fa-linkedin"></i>
+						<i class="fa-brands fa-square-youtube"></i>
+					</div>
+				</div>
+
+				<!-- bottom container -->
+				<div class="bottom-container">
+					<div class="need-help">
+						<a href="#">Need Help?</a>
+						<a href="#">+387 654 123</a>
+						<a href="#">customer-support@highair.com</a>
+					</div>
+
+					<!-- link list -->
+					<div class="link-list">
+						<a href="#accessibility">Accessibility</a>
+						<a href="#eu-data-protection">EU Data Protection Rights</a>
+						<a href="#legal-notice">Legal Notice</a>
+						<a href="#cookies">Cookies</a>
+						<a href="#privacy-policy">Privacy Policy</a>
+					</div>
+
+					<!-- all rights reserved -->
+					<div class="legal-icon">
+						<img src="assets/img/footer_logo.png" alt="company logo" class="logo" />
+						<p>© 2023 HighAir. All rights reserved.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="assets/js/navigation.js"></script>
+		<script>
+			document.getElementById("myButton").onclick = function () {
+				location.href = "baggage.html";
+			};
+
+			document.getElementById("backButton").onclick = function () {
+				location.href = "tickets.html";
+			};
+
+			document.getElementById("homepage").onclick = function () {
+					location.href = "index.html";
+			};
+
+			document.getElementById("homepage-mobile").onclick = function () {
+					location.href = "index.html";
+			};
+		</script>
+	</body>
+</html>

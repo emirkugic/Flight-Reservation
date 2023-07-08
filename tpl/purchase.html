@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- css files -->
+		<link rel="stylesheet" href="assets/style/style.css" />
+        <link rel="stylesheet" href="assets/style/tickets.css" />
+        <link rel="stylesheet" href="assets/style/purchase.css" />
+
+		<!-- google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;400;600&family=Pavanam&family=Poppins:wght@200;400;700&display=swap" rel="stylesheet" />
+
+		<script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+
+		<!-- bootstrap -->
+		<link type="text/css" rel="stylesheet" href="assets/style/bootstrap.min.css" />
+
+		<title>HighAir</title>
+        <link rel="icon" href="assets/img/logo-notext.png">
+	</head>
+    <body>
+		<nav class="main-navigation">
+			<img src="assets/img/logo.svg" alt="Logo" class="img-logo" id="homepage"/>
+			<img src="assets/img/mobile-logo.png" alt="Logo" class="img-logo mobile-logo" id="homepage-mobile"/>
+			<ul>
+				<li><a href="#">Help</a></li>
+				<li><a href="hotels.html">Hotels</a></li>
+				<li><a href="cars.html">Cars</a></li>
+				<li><a href="login.html">Sign In</a></li>
+				<li>
+					<span class="last-option"><a href="signup.html">Sign Up</a></span>
+				</li>
+			</ul>
+			<div class="hamburger-menu">&#9776;</div>
+			<div class="mobile-menu">
+				<ul>
+					<li><a href="#">Homepage</a></li>
+					<li><a href="#">Help</a></li>
+					<li><a href="hotels.html">Hotels</a></li>
+					<li><a href="cars.html">Cars</a></li>
+				</ul>
+			</div>
+		</nav>
+
+        <section class="steps">
+			<div class="step">
+				<img src="assets/img/steps-plane-active.png" alt="">
+				<p>Flights</p>
+				<img src="assets/img/steps-divider.png" class="steps-divider" alt="">
+			</div>
+
+			<div class="step">
+				<img src="assets/img/steps-seat-inactive.png" alt="">
+				<p>Seats</p>
+				<img src="assets/img/steps-divider.png" class="steps-divider" alt="">
+			</div>
+
+			<div class="step">
+				<img src="assets/img/steps-bags-inactive.png" alt="">
+				<p>Bags</p>
+				<img src="assets/img/steps-divider.png" class="steps-divider" alt="">
+			</div>
+
+			<div class="step">
+				<img src="assets/img/steps-extras-inactive.png" alt="">
+				<p>Extras</p>
+				<img src="assets/img/steps-divider.png" class="steps-divider" alt="">
+			</div>
+
+			<div class="step active">
+				<img src="assets/img/steps-review-inactive.png" alt="">
+				<p>Review</p>
+			</div>
+        </section>
+
+        <section class="ticket-overview">
+			<div class="tickets">
+				<div class="first-ticket">
+					<div class="ticket-header">
+						<img src="assets/img/logo-notext.png" alt="" class="ticket-logo">
+						<div class="ticket-flight">
+							<p>SJJ<br>Sarajevo</p>
+							<img src="assets/img/ticket-art.png" alt="" class="ticket-art">
+							<p>AMS<br>Amsterdam</p>
+						</div>
+					</div>
+					<div class="ticket-flight-info">
+						<div class="info-1">
+							<p><span>PASSENGER</span><br>John Doe</p>
+							<p><span>FLIGHT NUMBER</span><br>SA143</p>
+						</div>
+
+						<div class="info-2">
+							<p><span>DATE AND TIME</span><br>April 15, 10:00</p>
+							<p><span>SEAT</span><br>E6</p>
+						</div>
+
+						<div class="info-3">
+							<p><span>CLASS</span><br>Economy</p>
+							<p><span>GATE</span><br>3</p>
+						</div>
+					</div>
+
+					<img src="assets/img/barcode.png" alt="" class="barcode">
+				</div>
+
+				<div class="first-ticket">
+					<div class="ticket-header">
+						<img src="assets/img/logo-notext.png" alt="" class="ticket-logo">
+						<div class="ticket-flight">
+							<p>SJJ<br>Sarajevo</p>
+							<img src="assets/img/ticket-art.png" alt="" class="ticket-art">
+							<p>AMS<br>Amsterdam</p>
+						</div>
+					</div>
+					<div class="ticket-flight-info">
+						<div class="info-1">
+							<p><span>PASSENGER</span><br>John Doe</p>
+							<p><span>FLIGHT NUMBER</span><br>SA143</p>
+						</div>
+
+						<div class="info-2">
+							<p><span>DATE AND TIME</span><br>April 15, 10:00</p>
+							<p><span>SEAT</span><br>E6</p>
+						</div>
+
+						<div class="info-3">
+							<p><span>CLASS</span><br>Economy</p>
+							<p><span>GATE</span><br>3</p>
+						</div>
+					</div>
+
+					<img src="assets/img/barcode.png" alt="" class="barcode">
+				</div>
+			</div>
+
+			<div class="form-container">
+			<div class="checkout-form">
+				<div class="buttons">
+					<button class="paypal">
+						<img src="assets/img/paypal.png" alt="">
+					</button>
+					<button class="gpay">
+						<img src="assets/img/gpay.png" alt="">
+					</button>
+				</div>
+				<p>Enter credit card details</p>
+				<form action="#" id="checkout-form">
+					<div class="input-row">
+						<div class="input-group">
+							<input type="text" id="card-num" placeholder=" " name="card-num" />
+							<label for="card-num" class="checkout-form-label"> Card Number </label>
+						</div>
+
+						<img src="assets/img/credit-card.png" alt="">
+					</div>
+
+					<div class="input-row">
+						<div class="input-group">
+							<input type="text" id="first-name" placeholder=" " name="first-name"/>
+							<label for="first-name" class="checkout-form-label"> First Name </label>
+						</div>
+
+						<div class="input-group">
+							<input type="text" id="last-name" placeholder=" " name="last-name" />
+							<label for="last-name" class="checkout-form-label"> Last Name </label>
+						</div>
+					</div>
+
+					<div class="input-row">
+						<div class="input-group">
+							<input type="text" id="exp-code" placeholder=" " name="exp-code" />
+							<label for="exp-code" class="checkout-form-label"> Expiration Date </label>
+						</div>
+
+						<div class="input-group">
+							<input type="text" id="cvv" placeholder=" " name="cvv" />
+							<label for="cvv" class="checkout-form-label"> CVV </label>
+						</div>
+					</div>
+
+					<div class="input-row">
+						<div class="input-group">
+							<input type="text" id="security-code" placeholder=" " name="security-code" />
+							<label for="security-code" class="checkout-form-label"> Security Code </label>
+						</div>
+
+						<div class="input-group">
+							<input type="text" id="zip-code" placeholder=" " name="zip-code"/>
+							<label for="zip-code" class="checkout-form-label"> Billing Zip Code </label>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="info-navigation-options">
+				<p class="info-back-button" id="backButton">Back</p>
+
+				<button id="continue-btn" class="button continue-info-btn">
+					Continue
+					<img
+						src="assets/img/right-arrow.png"
+						alt="Right Arrow"
+						class="continue-info-icon"
+					/>
+				</button>
+			</div>
+
+		</div>
+
+        </section>
+
+        <script src="assets/js/navigation.js"></script>
+		<script>
+			$(document).ready(function () {
+				$.validator.addMethod("dateFuture", function(value, element) {
+					var today = new Date();
+					var mm = today.getMonth() + 1;
+					var yyyy = today.getFullYear();
+					var inputDate = value.split('/');
+					var inputMonth = parseInt(inputDate[0]);
+					var inputYear = parseInt(inputDate[1]);
+					return (inputYear > yyyy) || (inputYear === yyyy && inputMonth >= mm);
+				}, 'Please enter a date in the future.');
+
+				// Custom method to validate the credit card number using the Luhn algorithm
+				$.validator.addMethod("luhnAlgorithm", function(value, element) {
+					var nCheck = 0, nDigit = 0, bEven = false;
+					value = value.replace(/\D/g, "");
+
+					for (var n = value.length - 1; n >= 0; n--) {
+						var cDigit = value.charAt(n),
+							nDigit = parseInt(cDigit, 10);
+
+						if (bEven && (nDigit *= 2) > 9) nDigit -= 9;
+
+						nCheck += nDigit;
+						bEven = !bEven;
+					}
+
+					return nCheck % 10 === 0;
+				}, 'Please enter a valid credit card number.');
+
+				$("#continue-btn").click(function(event){
+					event.preventDefault();
+					$("#checkout-form").submit();
+				});
+
+				$("#checkout-form").validate({
+					rules: {
+						"card-num": {
+							required: true,
+							digits: true,
+							luhnAlgorithm: true,
+							minlength: 16,
+							maxlength: 16
+						},
+						"first-name": {
+							required: true,
+							minlength: 2
+						},
+						"last-name": {
+							required: true,
+							minlength: 2
+						},
+						"exp-code": {
+							required: true,
+							dateFuture: true
+						},
+						"cvv": {
+							required: true,
+							digits: true,
+							minlength: 3,
+							maxlength: 4
+						},
+						"security-code": {
+							required: true,
+							digits: true,
+							minlength: 3,
+							maxlength: 4
+						},
+						"zip-code": {
+							required: true,
+							digits: true
+						}
+					},
+					messages: {
+						"card-num": {
+							required: "Please enter your card number.",
+							digits: "Please enter only digits.",
+							luhnAlgorithm: "Please enter a valid card number.",
+							minlength: "Your card number must be at least 16 characters long.",
+							maxlength: "Your card number must be no more than 16 characters long."
+						},
+						"exp-code": {
+							dateFuture: "Date not in future."
+						},
+					}, 
+
+					errorPlacement: function(error, element) {
+					error.insertAfter(element.siblings('label'));
+				}
+				});
+			});
+		</script>
+		<script>
+			document.getElementById("backButton").onclick = function () {
+				location.href = "passenger-info.html";
+			};
+
+			document.getElementById("homepage").onclick = function () {
+					location.href = "index.html";
+			};
+
+			document.getElementById("homepage-mobile").onclick = function () {
+					location.href = "index.html";
+			};
+		</script>
+    </body>
+</html>

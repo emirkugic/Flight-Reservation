@@ -1,0 +1,139 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+body {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	background: #dfdfdf;
+}
+.container {
+	position: relative;
+	max-width: 700px;
+	width: 500px;
+	background: #fff;
+	padding: 25px;
+	border-radius: 8px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.confirm-image {
+	text-align: center;
+	padding-top: 30px;
+}
+
+.confirm-image img {
+	width: 81px;
+	height: 81px;
+}
+
+/* back arrow */
+.back-arrow {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.back-arrow img {
+	width: 25px;
+	height: 22px;
+}
+/* back arrow */
+
+.container h4 {
+	font-size: 16px;
+	color: rgba(38, 35, 46, 0.8);
+	font-weight: 400;
+	text-align: left;
+}
+
+.container header {
+	font-size: 27.9px;
+	color: #d64045;
+	font-weight: 600;
+	text-align: center;
+}
+.container .form {
+	margin-top: 25px;
+}
+
+.form button {
+	height: 55px;
+	width: 100%;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 400;
+	margin-top: 30px;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	background: #d64045;
+	border-radius: 10px;
+}
+.form button:hover {
+	background: #be383d;
+}
+
+.bottom-text {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 16px;
+	color: rgba(38, 35, 46, 0.8);
+	font-weight: 400;
+}
+
+@media screen and (max-width: 500px) {
+	.form .column {
+		flex-wrap: wrap;
+	}
+}
+
+.four-digit-input {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.four-digit-input input {
+	width: 25px;
+	margin: 0 10px;
+	text-align: center;
+	border: none;
+	border-bottom: 2px solid #000;
+	font-size: 40px;
+	outline: none;
+}
+
+.bottom-text {
+	text-decoration: underline;
+	font-size: 16px;
+}
+
+.form p {
+	text-align: center;
+	margin-top: 25px;
+	font-size: 14px;
+	color: #26232e;
+	font-weight: 400;
+}
+
+.user-email {
+	font-size: 19px;
+	font-weight: 400;
+	color: rgba(38, 35, 46, 1);
+	margin-left: 40px;
+}
+
+.message {
+	color: rgba(38, 35, 46, 0.7);
+	margin-left: 40px;
+	font-size: 18px;
+}

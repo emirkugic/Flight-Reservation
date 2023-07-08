@@ -1,0 +1,276 @@
+.passenger-info-menu {
+	display: block;
+	width: fit-content;
+	margin: auto;
+	position: relative;
+	top: 40px;
+}
+
+.passenger-info {
+	background: #f0f0f0;
+	border: 1px solid #b9b9b9;
+	border-radius: 35px;
+	padding: 30px;
+}
+
+.input-group {
+	position: relative;
+}
+
+.passenger-info .checkbox-label {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 150%;
+	color: #26232e;
+}
+
+.info-first-row,
+.info-second-row,
+.info-third-row {
+	display: flex;
+	align-items: center;
+	padding: 20px 20px 20px 0;
+}
+
+.info-first-row input,
+.info-second-row input,
+.info-third-row input {
+	width: 268px;
+	height: 50px;
+	box-sizing: border-box;
+	border: 1px solid rgba(38, 35, 46, 0.3);
+	border-radius: 5px;
+	padding: 10px;
+	margin-right: 20px;
+	margin-bottom: 3px;
+	background-color: transparent;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 150%;
+	color: var(--font-color);
+}
+
+.info-second-row select {
+	width: 268px;
+	height: 50px;
+	box-sizing: border-box;
+	border: 1px solid rgba(38, 35, 46, 0.3);
+	border-radius: 5px;
+	padding: 10px;
+	background-color: transparent;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 150%;
+	color: var(--font-color);
+}
+
+.info-form-label {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 19px;
+	line-height: 16px;
+	color: var(--font-color);
+	background-color: #f0f0f0;
+	position: absolute;
+}
+
+input:not(:focus):placeholder-shown + .info-form-label {
+	pointer-events: none;
+	top: 28px;
+	left: 15px;
+	font-size: 16px;
+	transition: all 0.3s ease-in-out;
+}
+
+input:focus + .info-form-label,
+input:not(:placeholder-shown) + .info-form-label {
+	pointer-events: none;
+	top: 2px;
+	left: 15px;
+	font-size: 16px;
+	transition: all 0.3s ease-in-out;
+}
+
+.info-select-label {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	color: var(--font-color);
+	background-color: #f0f0f0;
+	position: absolute;
+	pointer-events: none;
+	top: -12px;
+	left: 15px;
+	font-size: 16px;
+}
+
+.info-first-row input[type="tel"],
+.info-second-row input[type="date"],
+.info-select-label {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	color: var(--font-color);
+	font-size: 16px;
+}
+
+.input-group-addon {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	color: var(--font-color);
+	background-color: #f0f0f0;
+	position: absolute;
+	pointer-events: none;
+	top: -12px;
+	left: 15px;
+	font-size: 16px;
+}
+
+.info-navigation-options {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 30px;
+}
+
+.continue-info-btn {
+	padding-right: 30px;
+	padding-left: 20px;
+}
+
+.continue-info-icon {
+	position: relative;
+	left: 10px;
+	top: 8px;
+	transform: translateY(-50%);
+	width: 10px;
+	height: auto;
+}
+
+.info-back-button {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 16px;
+	text-decoration-line: underline;
+	color: #d64045;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 964px) {
+	.info-first-row,
+	.info-second-row,
+	.info-third-row {
+		flex-direction: column;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+		align-items: center;
+	}
+
+	.info-first-row input,
+	.info-second-row input,
+	.info-third-row input {
+		margin: 15px 0;
+	}
+
+	.input-group-phone,
+	.input-group-date {
+		margin-top: 15px;
+	}
+
+	.info-second-row select {
+		margin: 15px 0;
+	}
+
+	input:not(:focus):placeholder-shown + .info-form-label {
+		top: 32px;
+	}
+
+	input:focus + .info-form-label,
+	input:not(:placeholder-shown) + .info-form-label {
+		top: 7px;
+	}
+
+	.info-select-label {
+		top: 4px;
+	}
+}
+
+@media screen and (max-width: 446px) {
+	.info-first-row input,
+	.info-second-row input,
+	.info-third-row input,
+	.info-first-row input[type="tel"],
+	.info-second-row select {
+		width: 280px;
+	}
+
+	.passenger-info-menu {
+		padding: 10px;
+	}
+
+	.passenger-info {
+		padding: 15px;
+	}
+
+	.passenger-input {
+		position: relative; 
+		top: 15px;
+	}
+}
+
+@keyframes highlight {
+	0% {
+		background: #ffff99;
+	}
+	100% {
+		background: none;
+	}
+}
+
+.highlighted {
+	animation: highlight 1s;
+}
+
+input[type="checkbox"] {
+	width: 50px;
+	height: auto;
+}
+
+.checkbox-label {
+	padding: 0;
+	position: relative; 
+	left: -28px;
+	top: 3px;
+}
+
+.passenger-info {
+	position: relative;
+}
+
+.checkbox-container {
+	display: flex;
+	align-items: center;
+	padding-left: 32px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-top: 15px;
+}
+
+.footer {
+	margin-top: 100px;
+}
