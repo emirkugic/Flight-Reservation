@@ -62,12 +62,33 @@
 
 		<script src="assets/js/navigation.js"></script>
 		<script src="assets/js/flight-form.js"></script>
+		<script src="assets/js/user-service.js"></script>
+
 		<script type="text/javascript">
 			var token = localStorage.getItem("user_token");
-			if (!token) {
-				window.location.replace("login.html");
+			
+			if (token) {
+			  // user is logged in, change navigation
+			  $('nav.main-navigation ul').html(`
+				<li><a href="#hotels">Hotels</a></li>
+				<li><a href="#cars">Cars</a></li>
+				<li><a href="account.html">My Account</a></li>
+				<li><a href="#" id="logout-btn">Logout</a></li>
+			  `);
+			} else {
+			  // user is not logged in, show default navigation
+			  $('nav.main-navigation ul').html(`
+				<li><a href="#hotels">Hotels</a></li>
+				<li><a href="#cars">Cars</a></li>
+				<li><a href="login.html">Sign In</a></li>
+				<li><span class="signup.html"><a href="#">Sign Up</a></span></li>
+			  `);
 			}
+		  
+			$('#logout-btn').click(function (e) {
+			  e.preventDefault();
+			  UserService.logout();
+			});
 		</script>
-
 	</body>
 </html>

@@ -14,6 +14,7 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+		<script src="assets/js/user-service.js"></script>
 	</head>
 	<body>
 		<!-- login form -->
@@ -139,7 +140,7 @@
 
 		<script>
 			$(function() {
-				// Get URL parameters
+				// get URL parameters
 				const urlParams = new URLSearchParams(window.location.search);
 				const action = urlParams.get('action');
 			
@@ -152,8 +153,11 @@
 				}
 			});
 		</script>
-		<script src="assets/js/user-service.js"></script>
-			
-		
+		<script type="text/javascript">
+			$("#login-form").on('submit', function(event) {
+				event.preventDefault();
+				UserService.init();
+			});
+		</script>
 	</body>
 </html>
