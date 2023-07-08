@@ -8,4 +8,12 @@ class UserDao extends BaseDao
     {
         parent::__construct("users");
     }
+
+    public function login($email)
+    {
+        $query = "SELECT * FROM users WHERE email = :email";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute(['email' => $email]);
+        return $stmt->fetchAll();
+    }
 }

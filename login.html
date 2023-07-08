@@ -7,6 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 		<link rel="stylesheet" href="assets/style/login.css" />
+		<link rel="stylesheet" href="assets/style/signup.css" />
 
 		<title>Signup</title>
 		<link rel="icon" href="assets/img/logo-notext.png" />
@@ -15,15 +16,15 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
 	</head>
 	<body>
-		<!-- signup form -->
-		<section class="container">
+		<!-- login form -->
+		<section class="container login-form">
 			<div class="back-arrow">
 				<img src="assets/img/back-arrow.png" alt="Back Arrow" />
 			</div>
 
 			<header>Welcome to HighAir</header>
 
-			<form action="#" class="form">
+			<form class="form" id="login-form">
 				<div class="input-box">
 					<label>Email Address</label>
 					<input
@@ -32,6 +33,7 @@
 						placeholder="Enter email address"
 						id="email"
 						name="email"
+						value = "idk@gmail.com"
 					/>
 				</div>
 
@@ -43,72 +45,115 @@
 						placeholder="Enter password"
 						id="password"
 						name="password"
+						value = "123"
 					/>
 				</div>
 
-				<button id="signin-btn">Sign in</button>
+				<button id="signin-btn" type="submit">Sign in</button>
 
 				<div class="bottom-text">
-					Don't have an account? <a href="signup.html">Register</a>
+					Don't have an account? <a href="login.html?action=signup">Register</a>
 				</div>
 			</form>
 		</section>
 
+		
+
+		<!-- signup form -->
+		<section class="container signup-form">
+			<div class="back-arrow">
+				<img src="assets/img/back-arrow.png" alt="Back Arrow" />
+			</div>
+
+			<header>Welcome to HighAir</header>
+
+			<form class="form" id="signup-form">
+				<div class="input-box">
+					<label>Email address</label>
+					<div class="field-container">
+						<input type="email" class="email-input" placeholder="Enter email" id="reg_email" name="email" />
+						<img src="assets/img/email.png" alt="email icon" class="email-icon" />
+					</div>
+				</div>
+			
+				<div class="input-box">
+					<label>Choose password</label>
+					<div class="field-container">
+						<input type="password" class="password-input" placeholder="Enter password" id="reg_password" name="password" />
+						<img src="assets/img/lock.png" alt="password icon" class="password-icon" />
+						<span class="show-password">Show</span>
+					</div>
+				</div>	
+
+				<hr class="horizontal-line" />
+
+				<h3 class="details" >Account details</h3>
+
+				<h4>This will help you in your further booking process</h4>
+
+				<div class="checkbox-container">
+					<input type="checkbox" id="skipCheckbox" />
+					<label for="skipCheckbox">Skip this for now</label>
+				</div>
+
+				<div class="input-box">
+					<label>Full Name</label>
+					<input
+						type="text"
+						class="name-input"
+						placeholder="Enter full name"
+					/>
+				</div>
+
+				<div class="input-box phone-box" >
+					
+					<input type="tel" id="phone" placeholder="Enter phone number" class="phone-input">
+					
+					<label class="input-group-addon" id = "broj_telefona"> Phone Number </label>
+				</div>
+
+				<div class="input-box">
+					<label>Date of Birth</label>
+					<input
+						type="date"
+						class="dob-input"
+						placeholder="Enter birth date"
+					/>
+				</div>
+
+
+				<button id="signup-btn" type="submit">Sign Up</button>
+
+				<div class="bottom-text">
+					Already have an account? <a href="login.html?action=login">Login</a>
+				</div>
+
+				<hr class="horizontal-line" />
+
+				<h5>
+					By clicking the Sign Up button, you agree to our Terms of Service and
+					Privacy Policy.
+				</h5>
+			</form>
+		</section>
+
 		<script>
-			$(document).ready(function () {
-				$.validator.addMethod(
-					"validEmail",
-					function (value, element) {
-						return value === "johndoe@gmail.com";
-					},
-					"Email is not valid."
-				);
-
-				$.validator.addMethod(
-					"validPassword",
-					function (value, element) {
-						return value === "johndoe123";
-					},
-					"Password is not correct."
-				);
-
-				$(".form").validate({
-					rules: {
-						email: {
-							required: true,
-							email: true,
-							validEmail: true,
-						},
-						password: {
-							required: true,
-							validPassword: true,
-						},
-					},
-					messages: {
-						email: {
-							required: "Please enter your email address.",
-						},
-						password: {
-							required: "Please enter your password.",
-						},
-					},
-					highlight: function (element, errorClass) {
-						$(element).addClass("error");
-					},
-					unhighlight: function (element, errorClass) {
-						$(element).removeClass("error");
-					},
-					errorElement: "div",
-					errorLabelContainer: ".error-message",
-					submitHandler: function (form) {
-						location.href = "passenger-info.html";
-					},
-				});
-
-				document.getElementById("signin-btn").onclick = function () {
-					$(".form").submit();
-				};
+			$(function() {
+				// Get URL parameters
+				const urlParams = new URLSearchParams(window.location.search);
+				const action = urlParams.get('action');
+			
+				if (action === 'signup') {
+					$('.login-form').hide(); 
+					$('.signup-form').show();
+				} else {
+					$('.login-form').show();
+					$('.signup-form').hide();
+				}
 			});
 		</script>
+		<script src="assets/js/user-service.js"></script>
+			
+		
 	</body>
 </html>
