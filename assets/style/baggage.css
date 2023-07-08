@@ -1,0 +1,306 @@
+
+.baggage-heading {
+    font-family: 'Poppins';
+    font-style: normal;
+    line-height: 150%;
+    margin-left: 200px;
+}
+
+.baggage-heading h2 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--primary-color-1);
+}
+
+.baggage-section p {
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--font-color);
+}
+
+.baggage-direction p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--primary-color-2);
+    padding-left: 10px;
+}
+
+.baggage-direction {
+    display: flex;
+    margin: 30px auto;
+    align-items: center;
+    width: fit-content;
+}
+
+.baggage-direction img {
+    position: relative;
+    top: -7px;
+    width: 35px;
+    height: 30px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.option-1, .option-2, .option-3 {
+    display: block;
+    margin: auto;
+    width: 300px;
+}
+
+.option-1, .option-2 {
+    padding-right: 67px;
+    border-right: 1px solid rgba(38, 35, 46, 0.7);
+}
+
+.baggage-options {
+    width: 75%;
+    margin: -15px auto;
+    background: #F0F0F0;
+    border: 1px solid #B9B9B9;
+    border-radius: 35px;
+    padding: 10px 30px;
+}
+
+.baggage-options .option-text {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--font-color);
+    margin-top: 20px;
+}
+
+.baggage-options img {
+    display: block;
+    width: 177px;
+    height: auto;
+    margin: 35px auto;
+}
+
+.baggage-options .bottom-option-text {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: #1A3972;
+}
+
+.baggage-options .suitcase-backpack {
+    width: 210px;
+}
+
+.baggage-options .baggage-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.baggage-form input {
+    height: 18px;
+    width: 18px;
+}
+
+.baggage-form .radio-group {
+    display: block;
+    margin: auto;
+}
+
+.baggage-form label {
+    position: relative;
+    top: -3px;
+    padding-left: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #26232E;
+}
+
+.baggage-form p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;  
+    color: #1A3972;
+    text-align: center;
+}
+
+.baggage-form input[type="radio"] {
+    height: 18px;
+    width: 18px;
+    border: 2px solid #d64045;
+    border-radius: 50%;
+}
+
+.baggage-form input[type="radio"]:checked:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    background-color: #d64045;
+    border-radius: 50%;
+}
+
+.additional-fee {
+    position: absolute; 
+    right: 200px;
+    margin-top: 40px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    color: var(--font-color)
+}
+
+.additional-fee span {
+    font-weight: 500;
+    color: var(--primary-color-2)
+}
+
+.navigation-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: 90px auto;
+    padding: 0 30px;
+}
+
+.continue-baggage-btn {
+	padding-right: 30px;
+    padding-left: 20px;
+}
+
+.continue-baggage-icon {
+	position: relative;
+    left: 10px;
+	top: 8px;
+	transform: translateY(-50%);
+	width: 10px;
+	height: auto;
+}
+
+.baggage-back-button {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 16px;
+    text-decoration-line: underline;
+    color: #D64045;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* Tablet view */
+@media screen and (max-width: 768px) {
+    .option-1, .option-2 {
+        border-bottom: 1px solid rgba(38, 35, 46, 0.7);;
+
+    }
+
+    .baggage-heading, .baggage-direction {
+        margin-left: 2rem;
+    }
+
+    .baggage-options {
+        margin: -15px auto;
+        width: 90%;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .option-1, .option-2, .option-3 {
+        width: 80%;
+        padding-right: 0;
+        border-right: none;
+    } 
+    .baggage-heading h2, .baggage-direction p {
+        font-size: 18px;
+    }
+
+    .baggage-options .option-text {
+        font-size: 16px;
+    }
+
+    .baggage-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .baggage-form .radio-group {
+        margin-bottom: 10px;
+    }
+
+    .navigation-options {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .continue-baggage-btn, .baggage-back-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .additional-fee {
+        position: static;
+        text-align: center;
+        margin-top: 10px;
+        right: auto;
+    }
+
+    .baggage-back-button {
+        position: relative;
+        right: 40px;
+    }
+}
+
+/* Mobile view */
+@media screen and (max-width: 480px) {
+    .baggage-heading, .baggage-direction {
+        margin-left: 1rem;
+    }
+
+    .baggage-heading h2, .baggage-direction p {
+        font-size: 16px;
+    }
+
+    .baggage-options .option-text {
+        font-size: 14px;
+    }
+
+    .baggage-options {
+        margin: -15px auto;
+        width: 95%;
+    }
+
+    .baggage-form label {
+        font-size: 16px;
+    }
+
+    .additional-fee {
+        font-size: 16px;
+        margin-top: 50px;
+    }
+
+}

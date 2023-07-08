@@ -1,0 +1,274 @@
+* {
+	box-sizing: border-box;
+}
+
+.seat-ticket {
+	width: fit-content;
+}
+
+.steps-seat {
+	margin-bottom: 40px;
+}
+
+.seat-direction p {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	color: var(--primary-color-2);
+	padding-left: 10px;
+}
+
+.seat-direction {
+	display: flex;
+	margin: 20px auto;
+	align-items: center;
+	width: fit-content;
+}
+
+.seat-direction img {
+	position: relative;
+	top: -7px;
+	width: 35px;
+	height: 30px;
+}
+
+.seat-picker {
+	position: absolute;
+	left: 200px;
+	margin-top: 50px;
+	width: fit-content;
+}
+
+.plane {
+	margin: 20px auto;
+	width: 380px;
+	background: #dfdfdf;
+	padding: 0 15px;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+}
+
+.select {
+	height: 180px;
+}
+
+.bathrooms {
+	display: flex;
+	margin: auto;
+	width: 85%;
+	justify-content: space-between;
+}
+
+.second-bathroom {
+	width: 90%;
+	padding-bottom: 30px;
+}
+
+.bathrooms img {
+	height: 30px;
+	width: 33px;
+}
+
+ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.seats {
+	display: flex;
+	margin: 10px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+}
+
+.seat {
+	display: flex;
+	flex: 0 0 14.28%;
+	padding: 5px;
+	position: relative;
+}
+
+.seat label {
+	display: block;
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	padding: 5px;
+	background: var(--primary-color-1);
+	border-radius: 5px;
+	color: white;
+}
+
+.seat label:hover {
+	cursor: pointer;
+	box-shadow: 0 0 0px 2px var(--primary-color-2);
+}
+
+.seat:nth-child(3) {
+	margin-right: 14%;
+}
+
+.seat input[type="checkbox"] {
+	position: absolute;
+}
+
+.seat input[type="checkbox"]:checked + label {
+	background: #d64045;
+}
+
+.divider {
+	height: 30px;
+}
+
+.business-class {
+	margin: auto;
+	border-top: 3px solid #857c7c;
+	width: 270px;
+}
+
+.business-class p {
+	width: fit-content;
+	position: relative;
+	top: -15px;
+	display: block;
+	margin: auto;
+	padding: 5px;
+	font-family: "Pavanam";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 23px;
+	line-height: 16px;
+	text-align: center;
+	color: white;
+	background-color: var(--primary-color-1);
+}
+
+.floating-menu {
+	position: absolute;
+	right: 200px;
+	margin-top: 70px;
+	width: 350px;
+}
+
+.seat-options {
+	background-color: #dfdfdf;
+	font-family: "Poppins";
+	font-style: normal;
+	padding: 20px;
+}
+
+.selection-menu {
+	display: flex;
+	align-items: center;
+}
+
+.seat-paragraph,
+.seat-row,
+.seat-number {
+	padding: 0 20px;
+}
+
+.seat-paragraph {
+	font-weight: 500;
+	font-size: 34px;
+	color: rgba(38, 35, 46, 0.78);
+}
+
+.seat-number-paragraph,
+.seat-row-paragraph {
+	font-weight: 500;
+	font-size: 15px;
+	color: rgba(38, 35, 46, 0.78);
+}
+
+.seat-number-value,
+.seat-row-value {
+	font-weight: 500;
+	font-size: 30px;
+	color: var(--primary-color-2);
+	margin-top: -15px;
+}
+
+.additional-seat-fee {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 100%;
+	color: rgba(38, 35, 46, 0.78);
+	padding: 10px 0 0 20px;
+}
+
+.additional-seat-fee-value {
+	color: var(--primary-color-2);
+}
+
+.seat-navigation-options {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding-top: 30px;
+}
+
+.continue-seat-btn {
+	padding-right: 30px;
+	padding-left: 20px;
+}
+
+.continue-seat-icon {
+	position: relative;
+	left: 10px;
+	top: 8px;
+	transform: translateY(-50%);
+	width: 10px;
+	height: auto;
+}
+
+.seat-back-button {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 16px;
+	text-decoration-line: underline;
+	color: #d64045;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 768px) {
+	.seat-picker {
+		position: static;
+		display: block;
+		margin: auto;
+	}
+
+	.floating-menu {
+		width: 280px;
+		position: static;
+		margin: auto;
+	}
+
+	.seat-paragraph {
+		font-size: 28px;
+	}
+
+	.seat-options {
+		background-color: #dfdfdf;
+		font-family: "Poppins";
+		font-style: normal;
+		padding: 5px;
+	}
+}
+
+.footer {
+	margin-top: 1080px;
+}
+
+@media (max-width: 769) {
+	.footer {
+		margin-top: 0px;
+	}
+}

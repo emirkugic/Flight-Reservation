@@ -1,0 +1,281 @@
+.ticket-overview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.first-ticket {
+    width: 330px;
+    height: 590px;
+    background-image: url(../img/ticket-bg.png);
+    background-size: cover;
+    background-position: center center;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    margin-right: 30px;
+}
+
+.first-ticket .ticket-header {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DFDFDF;
+}
+
+.first-ticket .ticket-header img {
+    display: block;
+    margin: 25px auto;
+}
+
+.ticket-header .ticket-flight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticket-header .ticket-flight img {
+    width: 150px;
+    height: auto;
+}
+
+.ticket-overview .tickets {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticket-header .ticket-flight p {
+    text-align: center;
+    font-family: 'Poppins';
+    padding: 0 10px;
+    color: #dfdfdf;
+}
+
+.ticket-overview .ticket-flight-info {
+	padding: 0 10px;
+    margin: 20px auto;
+    width: 90%;
+    border-bottom: 1px dashed #DCDEE3;
+}
+
+.ticket-overview .ticket-flight-info p {
+    width: 130px;
+    font-family: 'Poppins';
+    padding: 0 10px;
+    color: #dfdfdf;
+    padding-bottom: 25px;
+}
+
+.ticket-overview .ticket-flight-info p span {
+    color: #8C8A93;
+}
+
+.ticket-flight-info .info-1, .ticket-flight-info .info-2, .ticket-flight-info .info-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticket-overview .barcode {
+    display: block;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.checkout-form {
+    background-color: #DFDFDF;
+    padding: 10px;
+}
+
+.checkout-form .buttons {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 90%;
+}
+
+.checkout-form button {
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.buttons .paypal img {
+    width: 77px; 
+    height: auto;
+}
+
+.buttons .paypal {
+    background-color: #FFD140;
+}
+
+.buttons .gpay img {
+    width: 65px; 
+    height: 25px;
+}
+
+.checkout-form p {
+    font-family: 'Fira Sans Condensed';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(38, 35, 46, 0.7);
+    padding: 20px 20px 0px 27px;
+}
+
+.input-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.checkout-form form {
+    padding: 10px;
+}
+
+.checkout-form input {
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid rgba(38, 35, 46, 0.3);
+    border-radius: 5px;
+}
+
+.checkout-form #card-num {
+    width: 400px;
+}
+
+.checkout-form-label {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 19px;
+	line-height: 16px;
+	color: var(--font-color);
+	background-color: #DFDFDF;
+	position: absolute;
+}
+
+input:not(:focus):placeholder-shown + .checkout-form-label {
+	pointer-events: none;
+	top: 27px;
+	left: 15px;
+	font-size: 16px;
+	transition: all 0.3s ease-in-out;
+}
+
+input:focus + .checkout-form-label,
+input:not(:placeholder-shown) + .checkout-form-label {
+	pointer-events: none;
+	top: 2px;
+	left: 15px;
+	font-size: 16px;
+	transition: all 0.3s ease-in-out;
+}
+
+.input-row img {
+    width: 120px;
+    height: auto;
+}
+
+.info-navigation-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.continue-info-btn {
+	padding-right: 30px;
+	padding-left: 20px;
+}
+
+.continue-info-icon {
+	position: relative;
+	left: 10px;
+	top: 8px;
+	transform: translateY(-50%);
+	width: 10px;
+	height: auto;
+}
+
+.info-back-button {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 16px;
+	text-decoration-line: underline;
+	color: #d64045;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 1195px) {
+    .ticket-overview .tickets {
+        display: block;
+    }
+    
+    .form-container {
+        position: relative;
+        top: -325px;
+    }
+}
+
+@media screen and (max-width: 834px) {
+    .ticket-overview {
+        display: block;
+        margin: auto;
+    }
+
+    .form-container {
+        width: 100%;
+        position: static;
+        margin-top: 40px;
+    }
+
+    .checkout-form {
+        width: 100%;
+    }
+
+    .first-ticket {
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 728px) {
+    .input-row {
+        flex-direction: column;
+    }
+
+    .input-row input {
+        width: 350px;
+    }
+
+    .input-row #card-num {
+        width: 350px;
+    }
+}
+
+.input-box input.error {
+	border: 1px solid red !important;
+}
+
+.input-box input.valid {
+	border: 1px solid green !important;
+}
+
+label.error {
+	color: red;
+    font-weight: 400;
+}

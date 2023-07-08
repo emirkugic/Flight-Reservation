@@ -1,0 +1,413 @@
+body {
+    background-image: none;
+}
+
+.steps {
+    width: 80%;
+    height: 60px;
+    display: flex; 
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 31.5px;
+}
+
+.steps .step {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    flex-direction: row;
+    text-align: center;
+    position: relative;
+}
+
+.steps .active p {
+    color: var(--primary-color-1);
+    font-weight: 600;
+}
+
+.steps p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    color: #6C7079;
+    text-align: center;
+    position: relative; 
+    top: 4px;
+    padding-left: 5px;
+}
+
+.steps img {
+    width: 19px;
+    height: auto;
+}
+
+.steps .steps-divider {
+    height: 60px; 
+    width: auto;
+    position: absolute;
+    right: -100px;
+}
+
+.previous-search {
+    width: 100%;
+    height: 100px;
+    padding: 0 50px 0 50px;
+    margin-bottom: 55px;
+}
+
+.previous-search hr {
+    margin-top: 40px;
+    border: 1px solid rgba(38, 35, 46, 0.2);
+}
+
+.previous-search p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--font-color);
+}
+
+.previous-form {
+    width: 100%;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-container {
+    position: relative;
+    margin-top: 10px;
+}
+
+.input-label {
+    font-weight: 400;
+    position: absolute;
+    top: -9px;
+    left: 12px;
+    background-color: #ffffff;
+}
+
+::placeholder {
+    font-family: 'Poppins';
+    color: var(--font-color);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.form-input {
+    height: 45px;
+    padding-left: 10px;
+    border: 1px solid rgba(38, 35, 46, 0.3);
+    border-radius: 5px;
+}
+
+.modify-btn {
+    padding: 10px 50px;
+}
+
+.available-tickets {
+    margin-top: 20px;
+}
+
+.flight-direction {
+    display: flex; 
+    margin-right: 50px;
+    align-content: center;
+    padding: 15px;
+    padding-left: 50px;
+}
+
+.flight-direction img {
+    width: 37px;
+    height: 33px;
+}
+
+.flight-direction p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--primary-color-2);
+    padding-left: 10px;
+}
+
+.ticket {
+    display: flex; 
+    width: 120rem;
+    align-items: center;
+    margin: 0 auto 10px auto; 
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    padding: 20px 50px 10px 50px;
+}
+
+.time {
+    padding-right: 5rem;
+    border-right: 1px solid rgba(38, 35, 46, 0.7);
+}
+
+.top {
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: var(--font-color);
+}
+
+.bottom {
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: var(--font-color);
+    margin-top: -15px;
+}
+
+.departure {
+    padding-left: 5rem;
+    padding-right: 20px;
+}
+
+.direction {
+    display: flex;
+    align-items: center;
+}
+
+.flight-art p {
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--font-color);
+}
+
+.flight-art-img {
+    width: 26rem;
+    height: auto;
+    margin: 0 auto 0 auto;
+}
+
+.destination {
+    padding-left: 20px;
+    padding-right: 5rem;
+    border-right: 1px solid rgba(38, 35, 46, 0.7);
+}
+
+.price {
+    text-align: center;
+    padding-left: 5rem;
+}
+
+.value-fare {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #26232E;
+}
+
+.value {
+    margin-top: -15px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 38px;
+    color: var(--primary-color-2)
+}
+
+.search-btn-ticket {
+    margin-left: 70px;
+    padding: 10px 50px;
+}
+
+.back-button {
+    display: relative; 
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 16px;
+    text-decoration-line: underline;
+    color: #D64045;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.ticket-form-controls {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-top: 40px;
+    width: 90%;
+}
+
+.continue-ticket-btn {
+    margin: 0;
+    padding: 10px 30px;
+}
+
+.selected-ticket {
+    display: none;
+}
+
+.selected-ticket-2 {
+    display: none;
+}
+
+.selected-icon {
+    width: 60px;
+    height: auto;
+    position: relative;
+    margin-left: 12rem;
+}
+
+@media screen and (max-width: 1220px) {
+    .ticket {
+        flex-direction: column; 
+        align-items: center;
+        padding: 20px;
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    .time {
+        border-right: none;
+        margin: auto;
+        padding: 0;
+    }
+
+    .top {
+        font-size: 18px;
+    }
+
+    .bottom {
+        font-size: 16px;
+    }
+
+    .direction {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px auto 10px auto;
+    }
+
+    .departure, .destination {
+        padding: 0;
+        border: none;
+        margin: auto;
+        text-align: center;
+    }
+
+    .direction {
+        border-bottom: 1px solid rgba(38, 35, 46, 0.7);
+    }
+
+    .flight-art img {
+        width: 30rem;
+        height: auto;
+        margin: 0;
+    }
+
+    .price {
+        padding-left: 0;
+        align-items: center;
+    }
+
+    .search-btn-ticket {
+        margin: 0;
+    }
+
+    .selected-icon {
+        display: auto; 
+        margin: 0;
+    }
+
+    .previous-form {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .input-container {
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    .form-input {
+        width: auto;
+        margin-bottom: 20px;
+    }
+
+    .previous-search {
+        margin-bottom: 390px;
+    }
+
+    .steps .steps-divider {
+        right: -70px;
+    }
+}
+
+@media screen and (max-width: 1016px) {
+    .steps .steps-divider {
+        right: -60px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .steps .steps-divider {
+        right: -50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .steps .steps-divider {
+        right: -40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .steps {
+        width: 95%;
+        height: 40px;
+    }
+
+    .steps p {
+        font-size: 13px;
+    }
+
+    .steps img {
+        width: 13px;
+        height: auto;
+    }
+
+    .steps .steps-divider {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .flight-direction {
+        flex-direction: column;
+        text-align: center;
+    }
+}

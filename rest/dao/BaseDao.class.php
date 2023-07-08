@@ -111,4 +111,12 @@ class BaseDao
         $results = $this->query($query, $params);
         return reset($results);
     }
+
+
+    public function get_by_email_and_password($email, $password)
+    {
+        $stmt = $this->conn->prepare('SELECT * FROM users WHERE email = :email AND password = :password');
+        $stmt->execute(['email' => $email, 'password' => $password]);
+        return $stmt->fetch();
+    }
 }
