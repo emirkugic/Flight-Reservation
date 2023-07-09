@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . "/../config.class.php";
+require_once "C:/wamp64/www/Flight-Reservation/rest/config.class.php";
+
 
 
 class BaseDao
@@ -20,11 +21,11 @@ class BaseDao
             $password = Config::DB_PASSWORD();
             $schema = Config::DB_SCHEME();
             $port = Config::DB_PORT();
-            $this->conn = new PDO("mysql:host=$host;port=$port;dbname=$schema", $username, $password);
+            $this->conn = new PDO("mysql:host=localhost;port=3306;dbname=fr", 'root', '');
 
             // set the PDO error mode to exception
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            //echo "Connected successfully";
+            echo "Connected successfully";
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }
