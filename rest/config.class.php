@@ -17,7 +17,7 @@ class Config
     }
     public static function DB_SCHEME()
     {
-        return Config::get_env("DB_SCHEME", "fr");
+        return Config::get_env("DB_SCHEME", "flight_reservation");
     }
     public static function DB_PORT()
     {

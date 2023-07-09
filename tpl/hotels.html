@@ -33,54 +33,54 @@
                 <img src="assets/img/booking.png" alt="">
                 <p>In partnership with <span>Booking.com</span></p>
             </div>
-            <form action="https://www.booking.com/searchresults.html" method="get" id="searchForm">
+            <form action="#">
                 <div class="hotel-first-row">
                     <div class="hotel-input-container">
-                        <input type="text" id="destination" name="ss" placeholder=" " required>
+                        <input type="text" id="destination" placeholder=" " required>
                         <label for="destination" class="hotel-label">Destination</label>
                     </div>
 
                     <div class="hotel-input-container">
-                        <input type="date" id="in-date" name="checkin_year" placeholder=" " required>
+                        <input type="date" id="in-date" placeholder=" " required>
                         <label for="in-date" class="hotel-label"> Check-in Date </label>
                     </div>
 
                     <div class="hotel-input-container">
-                        <input type="date" id="out-date" name="checkout_year" placeholder=" " required>
+                        <input type="date" id="out-date" placeholder=" " required>
                         <label for="out-date" class="hotel-label"> Check-out Date </label>
                     </div>
                 </div>
 
                 <div class="hotel-second-row">
                     <div class="hotel-input-container">
-                        <select id="guests" name="group_adults" placeholder=" " required>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                        <select id="guests" placeholder=" " required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                         </select>
                         <label for="guests" class="hotel-select-label">Guests</label>
                     </div>
 
                     <div class="hotel-input-container">
-                        <select id="rooms" name="no_rooms" placeholder=" " required>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                        <select id="rooms" placeholder=" " required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                         </select>
                         <label for="rooms" class="hotel-select-label">Rooms</label>
                     </div>
 
-                    <button type="submit" class="button search-hotel-btn">
+                    <button class="button search-hotel-btn">
                         <img src="assets/img/search.png" alt="Right Arrow" class="search-hotel-btn-icon" />
                         Search Hotels
                     </button>
+                </div>
             </form>
         </section>
-
 
         <section class="hotel-offers">
             <div class="hotel-offer">
@@ -113,32 +113,15 @@
         </section>
 
         <script src="assets/js/navigation.js"></script>
-        
-         <script>
-           document.getElementById("searchForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+        <script>
+			document.getElementById("homepage").onclick = function () {
+					location.href = "index.html";
+			};
 
-    var destination = document.getElementById("destination").value;
-    var inDate = new Date(document.getElementById("in-date").value);
-    var outDate = new Date(document.getElementById("out-date").value);
-    var guests = document.getElementById("guests").value;
-    var rooms = document.getElementById("rooms").value;
-
-    var url = "https://www.booking.com/searchresults.html?";
-    url += "ss=" + encodeURIComponent(destination);
-    url += "&checkin_monthday=" + inDate.getDate();
-    url += "&checkin_month=" + (inDate.getMonth() + 1);
-    url += "&checkin_year=" + inDate.getFullYear();
-    url += "&checkout_monthday=" + outDate.getDate();
-    url += "&checkout_month=" + (outDate.getMonth() + 1);
-    url += "&checkout_year=" + outDate.getFullYear();
-    url += "&group_adults=" + guests;
-    url += "&no_rooms=" + rooms;
-
-    window.location.href = url;
-});
-
-        </script>
+			document.getElementById("homepage-mobile").onclick = function () {
+					location.href = "index.html";
+			};
+		</script>
 
     </body>
 </html>
