@@ -12,8 +12,14 @@
 		<!-- fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;400;600&family=Pavanam&family=Poppins:wght@200;400;700&display=swap" rel="stylesheet" />
-		<script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;400;600&family=Pavanam&family=Poppins:wght@200;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/c4254e24a8.js"
+			crossorigin="anonymous"
+		></script>
 
 		<!-- jquery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -57,7 +63,7 @@
 				<section id="homepage"></section>
 				<section id="hotels"></section>
 				<section id="cars"></section>
-			  </main>
+			</main>
 		</div>
 
 		<script src="assets/js/navigation.js"></script>
@@ -66,29 +72,41 @@
 
 		<script type="text/javascript">
 			var token = localStorage.getItem("user_token");
-			
+
 			if (token) {
-			  // user is logged in, change navigation
-			  $('nav.main-navigation ul').html(`
+				// user is logged in, change navigation
+				$("nav.main-navigation ul").html(`
 				<li><a href="#hotels">Hotels</a></li>
 				<li><a href="#cars">Cars</a></li>
 				<li><a href="account.html">My Account</a></li>
 				<li><a href="#" id="logout-btn">Logout</a></li>
 			  `);
 			} else {
-			  // user is not logged in, show default navigation
-			  $('nav.main-navigation ul').html(`
+				// user is not logged in, show default navigation
+				$("nav.main-navigation ul").html(`
 				<li><a href="#hotels">Hotels</a></li>
 				<li><a href="#cars">Cars</a></li>
 				<li><a href="login.html">Sign In</a></li>
 				<li><span class="signup.html"><a href="#">Sign Up</a></span></li>
 			  `);
 			}
-		  
-			$('#logout-btn').click(function (e) {
-			  e.preventDefault();
-			  UserService.logout();
+
+			$("#logout-btn").click(function (e) {
+				e.preventDefault();
+				UserService.logout();
 			});
+		</script>
+
+		<script>
+			$("nav.main-navigation ul").on(
+				"click",
+				"li span.signup.html",
+				function (e) {
+					e.preventDefault();
+					$(".login-form").hide();
+					$(".signup-form").show();
+				}
+			);
 		</script>
 	</body>
 </html>
