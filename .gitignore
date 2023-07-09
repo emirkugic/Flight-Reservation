@@ -1,3 +1,2 @@
 vendor
-config.php
-config.class.php
+rest/config.class.php

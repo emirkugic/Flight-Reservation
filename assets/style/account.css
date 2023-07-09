@@ -5,14 +5,12 @@
 	--accent-color: #dfdfdf;
 }
 
-body {
-	background-color: lightgray;
+.container {
 	width: 60%;
 	margin: 20px auto;
 }
 
 .main {
-	padding: 15px;
 	font-family: "Poppins", sans-serif;
 }
 
@@ -191,7 +189,8 @@ body {
 }
 
 .mt-3 h3 {
-	font-size: 15px;
+	margin-top: 10px;
+	font-size: 25px;
 	font-weight: 500;
 	line-height: 15px;
 	letter-spacing: 0.03em;
