@@ -3,6 +3,11 @@
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
+Flight::route('GET /users/con-check', function(){
+    Flight::userService();
+});
+
+
 Flight::route('POST /users/login', function () {
     $login = Flight::request()->data->getData();
     $user = Flight::userService()->login($login['email']);
@@ -23,3 +28,15 @@ Flight::route('POST /users/login', function () {
         Flight::json(["message" => "User doesn't exist"], 404);
     }
 });
+
+Flight::route('POST /users/signup', function () {
+    $user = Flight::request()->data->getData();
+    $addedUser = Flight::userService()->addUser($user);
+
+    if ($addedUser) {
+        Flight::json(["message" => "User created successfully"], 201);
+    } else {
+        Flight::json(["message" => "Failed to create user"], 500);
+    }
+});
+
