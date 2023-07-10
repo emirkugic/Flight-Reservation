@@ -32,36 +32,36 @@
 				<img src="assets/img/rentalcars.png" alt="" />
 				<p>In partnership with <span>Rentalcars.com</span></p>
 			</div>
-			<form action="#">
+			<form id="searchCarForm">
 				<div class="hotel-first-row">
 					<div class="hotel-input-container">
-						<input type="text" id="location" placeholder=" " required />
+						<input type="text" id="location" name="locationName" placeholder=" " required />
 						<label for="location" class="hotel-label">Pick-up location</label>
 					</div>
 
 					<div class="hotel-input-container">
-						<input type="date" id="up-date" placeholder=" " required />
+						<input type="date" id="up-date" name="puYear" placeholder=" " required />
 						<label for="up-date" class="hotel-label"> Pick-up Date </label>
 					</div>
 
 					<div class="hotel-input-container">
-						<input type="time" id="up-time" placeholder=" " required />
+						<input type="time" id="up-time" name="puHour" placeholder=" " required />
 						<label for="up-time" class="hotel-label"> Pick-up Time </label>
 					</div>
 				</div>
 
 				<div class="hotel-second-row">
 					<div class="hotel-input-container">
-						<input type="date" id="off-date" placeholder=" " required />
+						<input type="date" id="off-date" name="doYear" placeholder=" " required />
 						<label for="off-date" class="hotel-label"> Drop-off Date </label>
 					</div>
 
 					<div class="hotel-input-container">
-						<input type="time" id="off-time" placeholder=" " required />
+						<input type="time" id="off-time" name="doHour" placeholder=" " required />
 						<label for="off-time" class="hotel-label"> Drop-off Time </label>
 					</div>
 
-					<button class="button search-hotel-btn">
+					<button type="submit" class="button search-hotel-btn" id="searchCarBtn">
 						<img
 							src="assets/img/search.png"
 							alt="Right Arrow"
@@ -108,15 +108,46 @@
 			</div>
 		</section>
 
-		<script src="assets/js/navigation.js"></script>
+		
 		<script>
-			document.getElementById("homepage").onclick = function () {
-					location.href = "index.html";
-			};
+			document.getElementById("searchCarForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-			document.getElementById("homepage-mobile").onclick = function () {
-					location.href = "index.html";
-			};
+    var location = document.getElementById("location").value;
+    var pickupDate = new Date(document.getElementById("up-date").value);
+    var pickupTime = document.getElementById("up-time").value;
+    var dropoffDate = new Date(document.getElementById("off-date").value);
+    var dropoffTime = document.getElementById("off-time").value;
+
+    var formattedPickupDate = pickupDate.toISOString().split("T")[0];
+    var formattedDropoffDate = dropoffDate.toISOString().split("T")[0];
+    var formattedPickupTime = pickupTime.replace(":", "%3A");
+    var formattedDropoffTime = dropoffTime.replace(":", "%3A");
+
+    var url = "https://www.rentalcars.com/search-results?";
+    url += "location=-1";
+    url += "&dropLocation=-1";
+    url += "&locationName=" + encodeURIComponent(location);
+    url += "&dropLocationName=" + encodeURIComponent(location);
+    url += "&coordinates=41.00817%2C28.974445";
+    url += "&dropCoordinates=41.00817%2C28.974445";
+    url += "&driversAge=30";
+    url += "&puDay=" + pickupDate.getDate();
+    url += "&puMonth=" + (pickupDate.getMonth() + 1);
+    url += "&puYear=" + pickupDate.getFullYear();
+    url += "&puMinute=" + pickupTime.substr(3, 2);
+    url += "&puHour=" + pickupTime.substr(0, 2);
+    url += "&doDay=" + dropoffDate.getDate();
+    url += "&doMonth=" + (dropoffDate.getMonth() + 1);
+    url += "&doYear=" + dropoffDate.getFullYear();
+    url += "&doMinute=" + dropoffTime.substr(3, 2);
+    url += "&doHour=" + dropoffTime.substr(0, 2);
+    url += "&ftsType=C";
+    url += "&dropFtsType=C";
+
+    window.location.href = url;
+  });
 		</script>
+		<script src="assets/js/navigation.js"></script>
 	</body>
 </html>
