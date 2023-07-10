@@ -28,5 +28,4 @@ class UserDao extends BaseDao
         }
     }
 
-
 }

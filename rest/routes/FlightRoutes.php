@@ -1,7 +1,4 @@
 <?php
-
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
 require_once 'services/FlightService.class.php';
 
 Flight::route('GET /flights/con-check', function(){
