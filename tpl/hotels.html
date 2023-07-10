@@ -33,20 +33,20 @@
                 <img src="assets/img/booking.png" alt="">
                 <p>In partnership with <span>Booking.com</span></p>
             </div>
-            <form action="#">
+            <form action="https://www.booking.com/searchresults.html" method="get" id="searchForm">
                 <div class="hotel-first-row">
                     <div class="hotel-input-container">
-                        <input type="text" id="destination" placeholder=" " required>
+                        <input type="text" id="destination" name="ss" placeholder=" " required>
                         <label for="destination" class="hotel-label">Destination</label>
                     </div>
 
                     <div class="hotel-input-container">
-                        <input type="date" id="in-date" placeholder=" " required>
+                        <input type="date" id="in-date" name="checkin_year" placeholder=" " required>
                         <label for="in-date" class="hotel-label"> Check-in Date </label>
                     </div>
 
                     <div class="hotel-input-container">
-                        <input type="date" id="out-date" placeholder=" " required>
+                        <input type="date" id="out-date" name="checkout_year" placeholder=" " required>
                         <label for="out-date" class="hotel-label"> Check-out Date </label>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                         <label for="rooms" class="hotel-select-label">Rooms</label>
                     </div>
 
-                    <button class="button search-hotel-btn">
+                    <button type="submit" class="button search-hotel-btn">
                         <img src="assets/img/search.png" alt="Right Arrow" class="search-hotel-btn-icon" />
                         Search Hotels
                     </button>
@@ -114,13 +114,28 @@
 
         <script src="assets/js/navigation.js"></script>
         <script>
-			document.getElementById("homepage").onclick = function () {
-					location.href = "index.html";
-			};
+			document.getElementById("searchForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-			document.getElementById("homepage-mobile").onclick = function () {
-					location.href = "index.html";
-			};
+    var destination = document.getElementById("destination").value;
+    var inDate = new Date(document.getElementById("in-date").value);
+    var outDate = new Date(document.getElementById("out-date").value);
+    var guests = document.getElementById("guests").value;
+    var rooms = document.getElementById("rooms").value;
+
+    var url = "https://www.booking.com/searchresults.html?";
+    url += "ss=" + encodeURIComponent(destination);
+    url += "&checkin_monthday=" + inDate.getDate();
+    url += "&checkin_month=" + (inDate.getMonth() + 1);
+    url += "&checkin_year=" + inDate.getFullYear();
+    url += "&checkout_monthday=" + outDate.getDate();
+    url += "&checkout_month=" + (outDate.getMonth() + 1);
+    url += "&checkout_year=" + outDate.getFullYear();
+    url += "&group_adults=" + guests;
+    url += "&no_rooms=" + rooms;
+
+    window.location.href = url;
+});
 		</script>
 
     </body>
