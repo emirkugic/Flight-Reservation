@@ -4,6 +4,9 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="assets/js/flight-service.js"></script>
+
 		<title>HighAir</title>
 	</head>
 
@@ -65,7 +68,7 @@
 							</div>
 						</form>
 
-						<form>
+						<form id="options-booking-form">
 							<div class="form-inputs">
 								<div class="first-row">
 									<div class="input-container">
@@ -228,38 +231,10 @@
 				</div>
 			</div>
 		</section>
-		<script src="assets/js/flight-form.js" crossorigin="anonymous"></script>
-		<script src="assets/js/flight-form.js" crossorigin="anonymous"></script>
-		<script>
-			function searchFlights(searchData) {
-				$.ajax({
-					url: "/Flight-Reservation/rest/flights/search",
-					type: "POST",
-					data: JSON.stringify(searchData),
-					contentType: "application/json",
-					dataType: "json",
-					success: function (result) {
-						console.log(result);
-						alert("Flights retrieved successfully");
-						// show result in a popup
-						window.alert(JSON.stringify(result, null, 4));
-						window.location.href = "#tickets";
-					},
-					error: function (XMLHttpRequest, textStatus, errorThrown) {
-						alert("Failed to retrieve flights");
-					},
-				});
-			}
 
-			$("#myButton2").click(function (e) {
-				e.preventDefault();
-				var searchData = {
-					departure_airport: $("#from-input").val(),
-					departure_date: $("#departure-date").val(),
-					destination_airport: $("#to-input").val(),
-					arrival_date: $("#return-date").val(),
-				};
-				searchFlights(searchData);
+		<script type="text/javascript">
+			$(document).ready(function () {
+				FlightService.init();
 			});
 		</script>
 	</body>
