@@ -56,8 +56,7 @@ body {
 	text-align: left;
 }
 
-/* icons */
-input[type="text"] {
+input[type="email"] {
 	background-image: url("../img/email.png");
 	background-repeat: no-repeat;
 	background-position: left;
@@ -74,7 +73,6 @@ input[type="password"] {
 	padding-left: 40px;
 	background-position: 10px center;
 }
-/* icons */
 
 .container header {
 	font-size: 27.9px;
@@ -151,21 +149,6 @@ input[type="password"] {
 	padding: 0 20px;
 }
 
-.form .google-icon {
-	width: 29px;
-	height: 29px;
-	background-image: url(../img/google_icon.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	margin-right: 10px;
-}
-
-.form .google-signup:hover {
-	background: #f2f2f2;
-	border-color: #d0d0d0;
-}
-
 .bottom-text {
 	margin-top: 20px;
 	text-align: center;
@@ -180,13 +163,6 @@ input[type="password"] {
 	}
 }
 
-.forgot-password {
-	text-align: right;
-	padding-top: 15px;
-}
-
-/* nav bar */
-
 .input-box input.error {
 	border: 1px solid red !important;
 }
@@ -198,3 +174,9 @@ input[type="password"] {
 label.error {
 	color: red;
 }
+
+#login-error, #signup-error {
+	display: block; 
+	margin: 10px auto;
+}
+

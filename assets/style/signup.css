@@ -7,6 +7,7 @@
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
 }
+
 body {
 	min-height: 100vh;
 	display: flex;
@@ -15,6 +16,7 @@ body {
 	padding: 20px;
 	background: #dfdfdf;
 }
+
 .container {
 	position: relative;
 	max-width: 700px;
@@ -51,6 +53,7 @@ body {
 	font-weight: 600;
 	text-align: left;
 }
+
 .container h4 {
 	font-size: 16px;
 	color: rgba(38, 35, 46, 0.8);
@@ -100,70 +103,25 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* icons */
 
-/* checkbox */
-.checkbox-container {
-	display: flex;
-	align-items: center;
-	padding-top: 10px;
-	padding-left: 10px;
-}
-
-.checkbox-container input[type="checkbox"] {
-	margin-right: 10px;
-	height: 15px;
-	width: 15px;
-	cursor: pointer;
-}
-
-.checkbox-container label {
-	font-size: 16px;
-	color: #26232e;
-}
-
-/* checkbox */
-
 .container header {
 	font-size: 27.9px;
 	color: #d64045;
 	font-weight: 600;
 	text-align: center;
 }
+
 .container .form {
 	margin-top: 30px;
 }
+
 .form .input-box {
 	width: 100%;
 	margin-top: 20px;
 	position: relative;
 }
-.phone-box {
-	/* margin-top: 20px; */
-	padding-top: 20px;
-}
 
-.input-box #broj_telefona {
-	position: absolute;
-	top: -10px;
-	left: 0px;
-}
 .input-box label {
 	color: #333;
-}
-
-.phone-box input {
-	width: 176%;
-}
-
-@media screen and (max-width: 500px) {
-	.phone-box input {
-		width: 120%;
-	}
-}
-
-@media screen and (max-width: 300) {
-	.phone-box input {
-		width: 100%;
-	}
 }
 
 .form :where(.input-box input, .select-box) {
@@ -218,39 +176,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 	background: #be383d;
 }
 
-.form .google-signup {
-	height: 55px;
-	width: 100%;
-	color: rgba(38, 35, 46, 0.81);
-	font-size: 1rem;
-	font-weight: 600;
-	margin-top: 10px; /* adjust as needed */
-	border: 1px solid #e9e9e9; /* add this line */
-	cursor: pointer;
-	transition: all 0.2s ease;
-	background: #fff; /* white background */
-	border-radius: 10px;
-	display: flex; /* enable flex layout */
-	align-items: center; /* vertically center the content */
-	justify-content: center; /* horizontally center the content */
-	padding: 0 20px; /* add padding to the button */
-}
-
-.form .google-icon {
-	width: 29px; /* set image width */
-	height: 29px; /* set image height */
-	background-image: url(../img/google_icon.png); /* add the image */
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	margin-right: 10px; /* add some space between the image and text */
-}
-
-.form .google-signup:hover {
-	background: #f2f2f2; /* slightly darker on hover */
-	border-color: #d0d0d0; /* slightly darker border on hover */
-}
-
 .bottom-text {
 	margin-top: 20px;
 	text-align: center;
@@ -282,9 +207,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .show-password {
 	position: absolute;
-	top: 60%;
+	top: 80px;
 	right: 15px;
-	transform: translateY(-50%);
 	font-size: 16px;
 	color: #26232e;
 	cursor: pointer;
@@ -336,6 +260,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 label.error {
 	color: red;
 	line-height: 2px;
+	margin-bottom: 10px;
 }
 
 .field-container {
