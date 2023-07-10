@@ -8,20 +8,22 @@ class FlightDao extends BaseDao
         parent::__construct("flight");
     }
 
-    public function searchFlights($departure_airport, $departure_date, $destination_airport, $arrival_date)
+    public function searchFlights($departure_city, $departure_date, $destination_city, $arrival_date)
     {
         $stmt = $this->conn->prepare("
-            SELECT departure_airport, departure_date, destination_airport, arrival_date 
+            SELECT c1.city_name as departure_city, f.departure_date, c2.city_name as destination_city, f.arrival_date 
             FROM flights f
             JOIN routes r ON f.route_id = r.id
             JOIN airports dep ON r.departure_airport = dep.airport_code
             JOIN airports dest ON r.destination_airport = dest.airport_code
-            WHERE departure_date LIKE ? AND departure_airport LIKE ? AND destination_airport LIKE ? AND arrival_date LIKE ?");
+            JOIN cities c1 ON dep.city_id = c1.id
+            JOIN cities c2 ON dest.city_id = c2.id
+            WHERE f.departure_date LIKE ? AND c1.city_name LIKE ? AND c2.city_name LIKE ? AND f.arrival_date LIKE ?");
         
         $stmt->execute([
             '%' . $departure_date . '%', 
-            '%' . $departure_airport . '%', 
-            '%' . $destination_airport . '%', 
+            '%' . $departure_city . '%', 
+            '%' . $destination_city . '%', 
             '%' . $arrival_date . '%'
         ]);
         
