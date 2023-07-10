@@ -28,4 +28,14 @@ class UserDao extends BaseDao
         }
     }
 
+    public function isEmailUnique($email)
+    {
+        // check if email unique
+        $stmt = $this->conn->prepare("SELECT COUNT(*) FROM users WHERE email = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+
+        // if the count is 0, then the email is unique
+        return $stmt->fetchColumn() == 0;
+    }
 }

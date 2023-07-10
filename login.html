@@ -6,23 +6,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-		<link rel="stylesheet" href="assets/style/login.css" />
-		<link rel="stylesheet" href="assets/style/signup.css" />
-
 		<title>Signup</title>
 		<link rel="icon" href="assets/img/logo-notext.png" />
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
 		<script src="assets/js/user-service.js"></script>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" href="assets/style/login.css" />
+		<link rel="stylesheet" href="assets/style/signup.css" />
 	</head>
 	<body>
+
 		<!-- login form -->
 		<section class="container login-form">
 			<div class="back-arrow">
 				<img src="assets/img/back-arrow.png" alt="Back Arrow" />
 			</div>
-
+			<div id="login-error"></div>
 			<header>Welcome to HighAir</header>
 
 			<form class="form" id="login-form">
@@ -34,7 +39,6 @@
 						placeholder="Enter email address"
 						id="email"
 						name="email"
-						value="idk@gmail.com"
 					/>
 				</div>
 
@@ -46,7 +50,6 @@
 						placeholder="Enter password"
 						id="password"
 						name="password"
-						value="123"
 					/>
 				</div>
 
@@ -63,6 +66,7 @@
 			<div class="back-arrow">
 				<img src="assets/img/back-arrow.png" alt="Back Arrow" />
 			</div>
+			<div id="signup-error"></div>
 
 			<header>Welcome to HighAir</header>
 
@@ -91,7 +95,6 @@
 
 				<div class="input-box">
 					<label>Email address</label>
-					<div class="field-container">
 						<input
 							type="email"
 							class="email-input"
@@ -99,17 +102,10 @@
 							id="reg_email"
 							name="email"
 						/>
-						<img
-							src="assets/img/email.png"
-							alt="email icon"
-							class="email-icon"
-						/>
-					</div>
 				</div>
 
 				<div class="input-box">
 					<label>Choose password</label>
-					<div class="field-container">
 						<input
 							type="password"
 							class="password-input"
@@ -117,43 +113,8 @@
 							id="reg_password"
 							name="password"
 						/>
-						<img
-							src="assets/img/lock.png"
-							alt="password icon"
-							class="password-icon"
-						/>
 						<span class="show-password">Show</span>
-					</div>
 				</div>
-
-				<!-- <hr class="horizontal-line" /> -->
-
-				<!-- <h3 class="details">Account details</h3>
-
-				<h4>This will help you in your further booking process</h4> -->
-
-				<!-- <div class="checkbox-container">
-					<input type="checkbox" id="skipCheckbox" />
-					<label for="skipCheckbox">Skip this for now</label>
-				</div> -->
-
-				<!-- <div class="input-box phone-box">
-					<input
-						type="tel"
-						id="phone"
-						placeholder="Enter phone number"
-						class="phone-input"
-					/>
-
-					<label class="input-group-addon" id="broj_telefona">
-						Phone Number
-					</label>
-				</div> -->
-
-				<!-- <div class="input-box">
-					<label>Date of Birth</label>
-					<input type="date" class="dob-input" placeholder="Enter birth date" />
-				</div> -->
 
 				<button id="signup-btn" type="submit">Sign Up</button>
 
