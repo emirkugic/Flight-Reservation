@@ -82,7 +82,7 @@ var FlightService = {
 			dataType: "json",
 			success: function (result) {
 				console.log(result);
-				window.alert(JSON.stringify(result, null, 4));
+				localStorage.setItem("flights", JSON.stringify(result));
 				window.location.href = "#tickets";
 			},
 			/*error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -90,7 +90,12 @@ var FlightService = {
 			},*/
 		});
 	},
+
+    displayFlights: function (flightData) {
+        $("#from-input").val(flightData[0].departure_city);
+        $("#to-input").val(flightData[0].destination_city);
+        $("#departure-date").val(flightData[0].departure_date);
+        $("#return-date").val(flightData[0].arrival_date);
+        $("#ticket-class").val("Economy");
+    },
 };
-$(document).ready(function() {
-    FlightService.init();
-});

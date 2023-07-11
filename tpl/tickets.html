@@ -23,8 +23,6 @@
 			crossorigin="anonymous"
 		></script>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 		<!-- bootstrap -->
 		<link
 			type="text/css"
@@ -74,7 +72,8 @@
 					<input
 						class="form-input from-input"
 						type="text"
-						placeholder="Sarajevo SJJ"
+						id="from-input"
+						readonly
 					/>
 					<label class="input-label">From</label>
 				</div>
@@ -82,21 +81,22 @@
 					<input
 						class="form-input to-input"
 						type="text"
-						placeholder="Amsterdam AMS"
+						id="to-input"
+						readonly
 					/>
 					<label class="input-label">To</label>
 				</div>
 				<div class="input-container">
-					<input class="form-input" placeholder="15/04/23" />
+					<input class="form-input" id="departure-date" readonly />
 					<label class="input-label">Departure Date</label>
 				</div>
 				<div class="input-container">
-					<input class="form-input" placeholder="19/04/23" />
+					<input class="form-input" id="return-date" readonly />
 					<label class="input-label">Return Date</label>
 				</div>
 				<div class="input-container">
-					<input class="form-input" placeholder="1" />
-					<label class="input-label">Passengers</label>
+					<input class="form-input" id="ticket-class" readonly />
+					<label class="input-label">Ticket Class</label>
 				</div>
 				<button class="button modify-btn">Modify</button>
 			</div>
@@ -358,20 +358,16 @@
 			</button>
 		</div>
 
-		<script src="assets/js/navigation.js"></script>
 		<script src="assets/js/tickets.js"></script>
 		<script>
-			document.getElementById("myButton").onclick = function () {
-				location.href = "seats.html";
-			};
+			$(document).ready(function () {
+				var flightData = JSON.parse(localStorage.getItem("flights"));
+				FlightService.displayFlights(flightData);
 
-			document.getElementById("homepage").onclick = function () {
-				location.href = "index.html";
-			};
-
-			document.getElementById("homepage-mobile").onclick = function () {
-				location.href = "index.html";
-			};
+				$(".modify-btn").click(function () {
+					window.location.href = "index.html";
+				});
+			});
 		</script>
 	</body>
 </html>
