@@ -24,9 +24,9 @@ var FlightService = {
 				window.alert(JSON.stringify(result, null, 4));
 				window.location.href = "#tickets";
 			},
-			error: function (XMLHttpRequest, textStatus, errorThrown) {
+			/*error: function (XMLHttpRequest, textStatus, errorThrown) {
 				alert("Failed to retrieve flights");
-			},
+			},*/
 		});
 	},
 };

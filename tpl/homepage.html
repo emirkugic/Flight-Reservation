@@ -5,7 +5,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
 		<script src="assets/js/flight-service.js"></script>
+		<script src="assets/js/flight-form.js"></script>
 
 		<title>HighAir</title>
 	</head>
@@ -75,6 +78,7 @@
 										<input
 											type="text"
 											id="from-input"
+											name="from-input"
 											class="from-to"
 											placeholder=" "
 											required
@@ -88,6 +92,7 @@
 										<input
 											type="text"
 											id="to-input"
+											name="to-input"
 											class="from-to"
 											placeholder=" "
 											required
@@ -102,6 +107,7 @@
 											<input
 												type="date"
 												id="departure-date"
+												name="departure-date"
 												placeholder=" "
 												required
 											/>
@@ -114,6 +120,7 @@
 											<input
 												type="date"
 												id="return-date"
+												name="return-date"
 												placeholder=" "
 												required
 											/>
@@ -125,7 +132,7 @@
 
 									<div class="second-column">
 										<div class="input-container">
-											<select id="passengers" placeholder=" " required>
+											<select id="passengers" name="passengers" placeholder=" " required>
 												<option value="1">1</option>
 												<option value="2">2</option>
 												<option value="3">3</option>
@@ -138,7 +145,7 @@
 										</div>
 
 										<div class="input-container">
-											<select id="ticket-class" placeholder=" " required>
+											<select id="ticket-class" name="ticket-class" placeholder=" " required>
 												<option value="business">Economy class</option>
 												<option value="economy">Business class</option>
 												<option value="economy">First class</option>
@@ -237,5 +244,6 @@
 				FlightService.init();
 			});
 		</script>
+		
 	</body>
 </html>
