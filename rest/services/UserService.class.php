@@ -46,4 +46,14 @@ class UserService extends BaseService
   {
     return $this->dao->get_by_id($id);
   }
+
+  public function updateUser($id, $user)
+{
+    if (!$this->dao->isEmailUnique($user['email'], $id)) {
+        return ['status' => 'error', 'message' => 'Email address already exists'];
+    }
+    return $this->dao->update($user, $id);
+}
+
+
 }

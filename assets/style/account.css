@@ -337,6 +337,11 @@
 	}
 }
 
+#account-error {
+	padding-top: 10px;
+	color: red;
+}
+
 .input-box input.error {
 	border: 1px solid red !important;
 }

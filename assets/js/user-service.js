@@ -19,12 +19,14 @@ var UserService = {
 			},
 			submitHandler: function (form, event) {
 				event.preventDefault();
-				$("#signin-btn").prop("disabled", true);
+				$("#save-changes-btn").prop("disabled", true);
 				var entity = Object.fromEntries(new FormData(form).entries());
 				UserService.login(entity);
+
+				UserService.updateUser(entity);
 			},
 		});
-	
+
 		$("#signup-form").validate({
 			rules: {
 				first_name: {
@@ -68,7 +70,7 @@ var UserService = {
 			},
 		});
 
-		/* $("#account-form").validate({ 
+		$("#account-form").validate({
 			rules: {
 				first_name: {
 					required: true,
@@ -84,7 +86,7 @@ var UserService = {
 					required: true,
 					minlength: 8,
 					regex: /[!@#$%^&*]/,
-				}
+				},
 			},
 			messages: {
 				first_name: {
@@ -102,20 +104,23 @@ var UserService = {
 				},
 			},
 			submitHandler: function (form, event) {
-				//
+				event.preventDefault();
+				$("#save-changes-btn").prop("disabled", true);
+				var entity = Object.fromEntries(new FormData(form).entries());
+				UserService.updateUser(entity);
 			},
-		}); */
-	}, 
+		});
+	},
 
 	displayError: function (message, targetId) {
 		var errorHtml = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
 		  <strong>Error!</strong> ${message}
 		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>`;
-	
+
 		$(`#${targetId}`).html(errorHtml);
 	},
-	
+
 	login: function (entity) {
 		$.ajax({
 			url: "rest/users/login",
@@ -130,7 +135,7 @@ var UserService = {
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
 				$("#signin-btn").prop("disabled", false);
-           		UserService.displayError("Wrong email or password", "login-error");
+				UserService.displayError("Wrong email or password", "login-error");
 			},
 		});
 	},
@@ -142,26 +147,32 @@ var UserService = {
 
 	signup: function (entity) {
 		$.ajax({
-		  url: "rest/users/signup",
-		  type: "POST",
-		  data: JSON.stringify(entity),
-		  contentType: "application/json",
-		  dataType: "json",
-		  success: function (result) {
-			console.log(result);
-			alert("User created successfully");
-			window.location.replace("login.html?action=login");
-		  },
-		  error: function (XMLHttpRequest, textStatus, errorThrown) {
-			$("#signup-btn").prop("disabled", false);
-			if (XMLHttpRequest.responseJSON && XMLHttpRequest.responseJSON.message === "Email address already exists") {
-			  UserService.displayError("Email address already exists", "signup-error");
-			} else {
-			  UserService.displayError("Failed to create user", "signup-error");
-			}
-		  },
+			url: "rest/users/signup",
+			type: "POST",
+			data: JSON.stringify(entity),
+			contentType: "application/json",
+			dataType: "json",
+			success: function (result) {
+				console.log(result);
+				alert("User created successfully");
+				window.location.replace("login.html?action=login");
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				$("#signup-btn").prop("disabled", false);
+				if (
+					XMLHttpRequest.responseJSON &&
+					XMLHttpRequest.responseJSON.message === "Email address already exists"
+				) {
+					UserService.displayError(
+						"Email address already exists",
+						"signup-error"
+					);
+				} else {
+					UserService.displayError("Failed to create user", "signup-error");
+				}
+			},
 		});
-	}, 
+	},
 
 	populateAccountForm: function () {
 		var token = localStorage.getItem("user_token");
@@ -169,7 +180,7 @@ var UserService = {
 		var id = user.id;
 
 		$.ajax({
-			url: "rest/users/account/" + id ,
+			url: "rest/users/account/" + id,
 			type: "GET",
 			contentType: "application/json",
 			dataType: "json",
@@ -178,14 +189,57 @@ var UserService = {
 				$("#last_name").val(result.last_name);
 				$("#email").val(result.email);
 				$("#password").val(result.password);
+				$("#user_name").text(result.first_name + " " + result.last_name);
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
-				UserService.displayError("Failed to retrieve account information", "account-error");
+				UserService.displayError(
+					"Failed to retrieve account information",
+					"account-error"
+				);
 			},
 		});
-	}
+	},
+
+	updateUser: function (entity) {
+		var token = localStorage.getItem("user_token");
+		var user = Utils.parseJwt(token);
+		var id = user.id;
+
+		$.ajax({
+			url: "rest/users/account/" + id,
+			type: "PUT",
+			data: JSON.stringify(entity),
+			contentType: "application/json",
+			dataType: "json",
+			success: function (result) {
+				alert("User updated successfully");
+				UserService.populateAccountForm();
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				$("#save-changes-btn").prop("disabled", false);
+				if (
+					XMLHttpRequest.responseJSON &&
+					XMLHttpRequest.responseJSON.message === "Email address already exists"
+				) {
+					UserService.displayError(
+						"Email address already exists",
+						"account-error"
+					);
+				} else {
+					UserService.displayError("Failed to update user", "account-error");
+				}
+			},
+		});
+	},
 };
 
-$.validator.addMethod('regex', function (value, element, param) {
-	return this.optional(element) || value.match(typeof param === 'string' ? new RegExp(param) : param);
-}, 'Please enter a valid value');
+$.validator.addMethod(
+	"regex",
+	function (value, element, param) {
+		return (
+			this.optional(element) ||
+			value.match(typeof param === "string" ? new RegExp(param) : param)
+		);
+	},
+	"Please enter a valid value"
+);
