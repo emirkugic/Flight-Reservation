@@ -4,9 +4,6 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
 		<script src="assets/js/flight-service.js"></script>
 		<script src="assets/js/flight-form.js"></script>
 
@@ -81,7 +78,7 @@
 											name="from-input"
 											class="from-to"
 											placeholder=" "
-											required
+											
 										/>
 										<label for="from-input" class="form-label">From</label>
 									</div>
@@ -95,7 +92,7 @@
 											name="to-input"
 											class="from-to"
 											placeholder=" "
-											required
+											
 										/>
 										<label for="to-input" class="form-label">To</label>
 									</div>
@@ -109,7 +106,7 @@
 												id="departure-date"
 												name="departure-date"
 												placeholder=" "
-												required
+												
 											/>
 											<label for="departure-date" class="form-label">
 												Departure Date
@@ -122,7 +119,7 @@
 												id="return-date"
 												name="return-date"
 												placeholder=" "
-												required
+												
 											/>
 											<label for="return-date" class="form-label">
 												Return Date
@@ -132,7 +129,7 @@
 
 									<div class="second-column">
 										<div class="input-container">
-											<select id="passengers" name="passengers" placeholder=" " required>
+											<select id="passengers" name="passengers" placeholder=" " >
 												<option value="1">1</option>
 												<option value="2">2</option>
 												<option value="3">3</option>
@@ -145,7 +142,7 @@
 										</div>
 
 										<div class="input-container">
-											<select id="ticket-class" name="ticket-class" placeholder=" " required>
+											<select id="ticket-class" name="ticket-class" placeholder=" " >
 												<option value="business">Economy class</option>
 												<option value="economy">Business class</option>
 												<option value="economy">First class</option>
@@ -180,7 +177,7 @@
 					<div class="form-inputs">
 						<div class="first-row">
 							<div class="input-container">
-								<input type="text" id="ticket-input" placeholder=" " required />
+								<input type="text" id="ticket-input" placeholder=" "  />
 								<label for="from-input" class="form-label">Ticket Number</label>
 							</div>
 
@@ -189,7 +186,7 @@
 									type="text"
 									id="passenger-input"
 									placeholder=" "
-									required
+									
 								/>
 								<label for="to-input" class="form-label"
 									>Passenger's Last Name</label
@@ -214,12 +211,12 @@
 					<div class="form-inputs">
 						<div class="first-row">
 							<div class="input-container">
-								<input type="text" id="flight-input" placeholder=" " required />
+								<input type="text" id="flight-input" placeholder=" "  />
 								<label for="from-input" class="form-label">Flight Number</label>
 							</div>
 
 							<div class="input-container">
-								<input type="text" id="status-input" placeholder=" " required />
+								<input type="text" id="status-input" placeholder=" "  />
 								<label for="to-input" class="form-label">Status</label>
 							</div>
 						</div>

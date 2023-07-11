@@ -67,7 +67,45 @@ var UserService = {
 				UserService.signup(entity);
 			},
 		});
-	},
+
+		/* $("#account-form").validate({ 
+			rules: {
+				first_name: {
+					required: true,
+				},
+				last_name: {
+					required: true,
+				},
+				email: {
+					required: true,
+					email: true,
+				},
+				password: {
+					required: true,
+					minlength: 8,
+					regex: /[!@#$%^&*]/,
+				}
+			},
+			messages: {
+				first_name: {
+					required: "First name is required",
+				},
+				last_name: {
+					required: "Last name is required",
+				},
+				email: {
+					required: "Email is required",
+					email: "Please enter a valid email address",
+				},
+				password: {
+					required: "Password is required",
+				},
+			},
+			submitHandler: function (form, event) {
+				//
+			},
+		}); */
+	}, 
 
 	displayError: function (message, targetId) {
 		var errorHtml = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -123,6 +161,31 @@ var UserService = {
 			}
 		  },
 		});
-	  },
-	  
+	}, 
+
+	populateAccountForm: function () {
+		var token = localStorage.getItem("user_token");
+		var user = Utils.parseJwt(token);
+		var id = user.id;
+
+		$.ajax({
+			url: "rest/users/account/" + id ,
+			type: "GET",
+			contentType: "application/json",
+			dataType: "json",
+			success: function (result) {
+				$("#first_name").val(result.first_name);
+				$("#last_name").val(result.last_name);
+				$("#email").val(result.email);
+				$("#password").val(result.password);
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				UserService.displayError("Failed to retrieve account information", "account-error");
+			},
+		});
+	}
 };
+
+$.validator.addMethod('regex', function (value, element, param) {
+	return this.optional(element) || value.match(typeof param === 'string' ? new RegExp(param) : param);
+}, 'Please enter a valid value');

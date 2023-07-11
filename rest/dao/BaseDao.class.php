@@ -48,7 +48,7 @@ class BaseDao
     {
         $stmt = $this->conn->prepare("SELECT * FROM " . $this->table_name . " WHERE id=:id");
         $stmt->execute(['id' => $id]);
-        return $stmt->fetchAll();
+        return $stmt->fetch();
     }
 
     /**

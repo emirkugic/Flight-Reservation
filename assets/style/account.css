@@ -336,3 +336,19 @@
 		display: none;
 	}
 }
+
+.input-box input.error {
+	border: 1px solid red !important;
+}
+
+.input-box input.valid {
+	border: 1px solid green !important;
+}
+
+label.error {
+	color: red;
+}
+
+#account-form input {
+	border: none;
+}

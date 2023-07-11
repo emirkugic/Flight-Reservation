@@ -206,13 +206,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .show-password {
-	position: absolute;
-	top: 80px;
-	right: 15px;
-	font-size: 16px;
-	color: #26232e;
-	cursor: pointer;
-	user-select: none;
+    position: absolute;
+	top: 60%;
+    right: 15px;
+    font-size: 16px;
+    color: #26232e;
+    cursor: pointer;
+    user-select: none;
 }
 
 /* 2nd try */
