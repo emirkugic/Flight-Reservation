@@ -6,7 +6,7 @@ var FlightService = {
         }, "Please enter a valid date.");
 
         // Validation for search flight form
-        $("#flight-search-form").validate({
+        $("#options-booking-form").validate({
             rules: {
                 "from-input": {
                     required: true,

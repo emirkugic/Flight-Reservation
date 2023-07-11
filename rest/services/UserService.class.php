@@ -41,4 +41,9 @@ class UserService extends BaseService
     }
     return $this->dao->addUser($user);
   }
+
+  public function getUser($id)
+  {
+    return $this->dao->get_by_id($id);
+  }
 }

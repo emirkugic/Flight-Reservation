@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="bootstrap-4.5.3-dist/css/bootstrap.min.css"
-		/>
-
 		<link rel="stylesheet" href="./assets/style/account.css" />
+
+		<script src="assets/js/user-service.js"></script>
 
 		<title>My Account</title>
 	</head>
@@ -45,36 +45,29 @@
 									details to make the booking quicker for you, and to keep you
 									informed.
 								</p>
-								<div class="row info-row">
-									<div class="col-md-3 info-label">
-										<label for="fullname" class="full-name">Full name</label>
+								<form id="account-form">
+									<div class="row info-row">
+										<div class="col-md-3 info-label">
+											<label for="first_name" class="first-name">First Name</label>
+										</div>
+										<div class="col-md-9">
+											<input class="info-text-container" id="first_name" name="first_name" type="text">
+										</div>
 									</div>
-									<div class="col-md-9">
-										<input class="info-text-container" id="fullname" type="text" value="John Doe">
+									<div class="row info-row">
+										<div class="col-md-3 info-label">
+											<label for="last_name" class="last-name">Last Name</label>
+										</div>
+										<div class="col-md-9">
+											<input class="info-text-container" id="last_name" name="last_name" type="text">
+										</div>
 									</div>
-								</div>
-								<div class="row info-row">
-									<div class="col-md-3 info-label">
-										<label for="dob" class="date-of-birth">Date of birth</label>
-									</div>
-									<div class="col-md-9">
-										<input class="info-text-container" id="dob" type="text" value="29/09/2002">
-									</div>
-								</div>
 								<div class="row info-row">
 									<div class="col-md-3 info-label">
 										<label for="email" class="email">Email address</label>
 									</div>
 									<div class="col-md-9">
-										<input class="info-text-container" id="email" type="email" value="johndoe@gmail.com">
-									</div>
-								</div>
-								<div class="row info-row">
-									<div class="col-md-3 info-label">
-										<label for="phone" class="phone-number">Phone number</label>
-									</div>
-									<div class="col-md-9">
-										<input class="info-text-container" id="phone" type="tel" value="+387 62 909 200">
+										<input class="info-text-container" id="email" type="email" name="email">
 									</div>
 								</div>
 								<div class="row info-row">
@@ -82,9 +75,15 @@
 										<label for="password" class="password">Password</label>
 									</div>
 									<div class="col-md-9">
-										<input class="info-text-container" id="password" type="password" value="*********">
+										<input class="info-text-container" name="password" id="password" type="password">
 									</div>
 								</div>
+								<div class="row info-row">
+									<div class="col-md-12 text-center">
+										<button id="account-btn" class="button" type="submit">Save Changes</button>
+									</div>
+								</div>
+							</form>
 							</div>
 						</div>
 					</div>
@@ -92,4 +91,9 @@
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			UserService.populateAccountForm();
+		});
+	</script>	
 </html>

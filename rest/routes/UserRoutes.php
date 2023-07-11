@@ -29,3 +29,7 @@ Flight::route('POST /users/signup', function () {
         Flight::json(["message" => "Failed to create user"], 500);
     }
 });
+
+Flight::route('GET /users/account/@id', function ($id) {
+    Flight::json(Flight::userService()->getUser($id));
+});
