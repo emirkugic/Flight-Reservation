@@ -33,3 +33,20 @@ Flight::route('POST /users/signup', function () {
 Flight::route('GET /users/account/@id', function ($id) {
     Flight::json(Flight::userService()->getUser($id));
 });
+
+//update credentials in my account
+Flight::route('PUT /users/account/@id', function ($id) {
+    $user = Flight::request()->data->getData();
+    $updatedUser = Flight::userService()->updateUser($id, $user);
+
+    if (isset($updatedUser['status']) && $updatedUser['status'] == 'error') {
+        Flight::json(["message" => $updatedUser['message']], 400);
+    } elseif ($updatedUser) {
+        Flight::json(["message" => "User updated successfully"], 200);
+    } else {
+        Flight::json(["message" => "Failed to update user"], 500);
+    }
+});
+
+
+

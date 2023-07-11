@@ -78,7 +78,6 @@
 											name="from-input"
 											class="from-to"
 											placeholder=" "
-											
 										/>
 										<label for="from-input" class="form-label">From</label>
 									</div>
@@ -92,7 +91,6 @@
 											name="to-input"
 											class="from-to"
 											placeholder=" "
-											
 										/>
 										<label for="to-input" class="form-label">To</label>
 									</div>
@@ -106,7 +104,6 @@
 												id="departure-date"
 												name="departure-date"
 												placeholder=" "
-												
 											/>
 											<label for="departure-date" class="form-label">
 												Departure Date
@@ -119,7 +116,6 @@
 												id="return-date"
 												name="return-date"
 												placeholder=" "
-												
 											/>
 											<label for="return-date" class="form-label">
 												Return Date
@@ -129,7 +125,7 @@
 
 									<div class="second-column">
 										<div class="input-container">
-											<select id="passengers" name="passengers" placeholder=" " >
+											<select id="passengers" name="passengers" placeholder=" ">
 												<option value="1">1</option>
 												<option value="2">2</option>
 												<option value="3">3</option>
@@ -142,7 +138,11 @@
 										</div>
 
 										<div class="input-container">
-											<select id="ticket-class" name="ticket-class" placeholder=" " >
+											<select
+												id="ticket-class"
+												name="ticket-class"
+												placeholder=" "
+											>
 												<option value="business">Economy class</option>
 												<option value="economy">Business class</option>
 												<option value="economy">First class</option>
@@ -177,17 +177,12 @@
 					<div class="form-inputs">
 						<div class="first-row">
 							<div class="input-container">
-								<input type="text" id="ticket-input" placeholder=" "  />
+								<input type="text" id="ticket-input" placeholder=" " />
 								<label for="from-input" class="form-label">Ticket Number</label>
 							</div>
 
 							<div class="input-container">
-								<input
-									type="text"
-									id="passenger-input"
-									placeholder=" "
-									
-								/>
+								<input type="text" id="passenger-input" placeholder=" " />
 								<label for="to-input" class="form-label"
 									>Passenger's Last Name</label
 								>
@@ -211,12 +206,12 @@
 					<div class="form-inputs">
 						<div class="first-row">
 							<div class="input-container">
-								<input type="text" id="flight-input" placeholder=" "  />
+								<input type="text" id="flight-input" placeholder=" " />
 								<label for="from-input" class="form-label">Flight Number</label>
 							</div>
 
 							<div class="input-container">
-								<input type="text" id="status-input" placeholder=" "  />
+								<input type="text" id="status-input" placeholder=" " />
 								<label for="to-input" class="form-label">Status</label>
 							</div>
 						</div>
@@ -241,6 +236,5 @@
 				FlightService.init();
 			});
 		</script>
-		
 	</body>
 </html>
