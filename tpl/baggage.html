@@ -25,28 +25,6 @@
         <link rel="icon" href="assets/img/logo-notext.png">
 	</head>
 	<body>
-		<nav class="main-navigation">
-			<img src="assets/img/logo.svg" alt="Logo" class="img-logo" id="homepage"/>
-			<img src="assets/img/mobile-logo.png" alt="Logo" class="img-logo mobile-logo" id="homepage-mobile"/>
-			<ul>
-				<li><a href="#">Help</a></li>
-				<li><a href="hotels.html">Hotels</a></li>
-				<li><a href="cars.html">Cars</a></li>
-				<li><a href="login.html">Sign In</a></li>
-				<li>
-					<span class="last-option"><a href="signup.html">Sign Up</a></span>
-				</li>
-			</ul>
-			<div class="hamburger-menu">&#9776;</div>
-			<div class="mobile-menu">
-				<ul>
-					<li><a href="index.html">Homepage</a></li>
-					<li><a href="#">Help</a></li>
-					<li><a href="hotels.html">Hotels</a></li>
-					<li><a href="cars.html">Cars</a></li>
-				</ul>
-			</div>
-		</nav>
 
 		<section class="steps">
 			<div class="step">
@@ -164,75 +142,5 @@
 		</div>
 
 		<script src="assets/js/navigation.js"></script>
-		<script>
-			document.getElementById("homepage").onclick = function () {
-					location.href = "index.html";
-			};
-
-			document.getElementById("homepage-mobile").onclick = function () {
-					location.href = "index.html";
-			};
-		</script>
-
-		<!-- footer -->
-		<footer class="footer">
-			<!-- subscription part -->
-			<div class="footer-right">
-				<div class="col-2">
-					<h3>Subscribe to our news letter</h3>
-					<h4>
-						Subscribe now to get our best deals delivered straight into your
-						inbox.
-					</h4>
-					<form>
-						<input type="email" , placeholder="Email address" required />
-						<br />
-						<button type="submit">SUBSCRIBE</button>
-					</form>
-
-					<div class="icons">
-						<i class="fa-brands fa-square-twitter"></i>
-						<i class="fa-brands fa-square-instagram"></i>
-						<i class="fa-brands fa-square-facebook"></i>
-						<i class="fa-brands fa-linkedin"></i>
-						<i class="fa-brands fa-square-youtube"></i>
-					</div>
-				</div>
-
-				<!-- bottom container -->
-				<div class="bottom-container">
-					<div class="need-help">
-						<a href="#">Need Help?</a>
-						<a href="#">+387 654 123</a>
-						<a href="#">customer-support@highair.com</a>
-					</div>
-
-					<!-- link list -->
-					<div class="link-list">
-						<a href="#accessibility">Accessibility</a>
-						<a href="#eu-data-protection">EU Data Protection Rights</a>
-						<a href="#legal-notice">Legal Notice</a>
-						<a href="#cookies">Cookies</a>
-						<a href="#privacy-policy">Privacy Policy</a>
-					</div>
-
-					<!-- all rights reserved -->
-					<div class="legal-icon">
-						<img src="assets/img/footer_logo.png" alt="company logo" class="logo" />
-						<p>© 2023 HighAir. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</footer>
-
-		<script>
-			document.getElementById("myButton").onclick = function () {
-				location.href = "signup.html";
-			};
-
-			document.getElementById("backButton").onclick = function () {
-				location.href = "seats.html";
-			};
-		</script>
 	</body>
 </html>

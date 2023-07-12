@@ -23,6 +23,9 @@
 			crossorigin="anonymous"
 		></script>
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 		<!-- bootstrap -->
 		<link
 			type="text/css"
@@ -119,7 +122,7 @@
 		<div class="ticket-form-controls">
 			<p class="back-button">Back</p>
 
-			<button class="button continue-ticket-btn" id="myButton">
+			<button class="button continue-ticket-btn" id="ticket-cont">
 				Continue
 				<img
 					src="assets/img/right-arrow.png"
@@ -147,6 +150,8 @@
 			});
 
 			var flights = JSON.parse(localStorage.getItem("flights"));
+
+			$('#ticket-cont').prop('disabled', true);
 
 			if (flights && flights.length > 0) {
 				$(".available-tickets").empty();
@@ -188,13 +193,19 @@
 					(function(flight) {
 						$(`#${flight.id}`).on('click', function() {
 							localStorage.setItem("selectedFlight", JSON.stringify(flight));
-							// window.location.href = "seats.html";
+							$('#ticket-cont').prop('disabled', false);
 						});
 					})(flight);
 				});
 			} else {
 				$(".available-tickets").html("<p>No flights were found.</p>");
 			}
+
+			$("#ticket-cont").click(function () {
+				if(!$('#ticket-cont').prop('disabled')) {
+				window.location.href = "#seats";
+			}
+			});
 		});
 </script>
 

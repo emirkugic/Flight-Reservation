@@ -116,10 +116,6 @@ ol {
 	position: absolute;
 }
 
-.seat input[type="checkbox"]:checked + label {
-	background: #d64045;
-}
-
 .divider {
 	height: 30px;
 }
