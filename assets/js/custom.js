@@ -16,6 +16,7 @@ $(document).ready(function() {
   app.route({view: 'seats', load: 'seats.html', onCreate: function() {}, onReady: function() {} });
   app.route({view: 'baggage', load: 'baggage.html', onCreate: function() {}, onReady: function() {} });
   app.route({view: 'passenger-info', load: 'passenger-info.html', onCreate: function() {}, onReady: function() {} });
+  app.route({view: 'purchase', load: 'purchase.html', onCreate: function() {}, onReady: function() {} });
   app.route({view: 'homepage', load: 'homepage.html', onCreate: function() {}, onReady: function() {} });
 
   // run app

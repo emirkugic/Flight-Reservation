@@ -131,7 +131,10 @@ var UserService = {
 			success: function (result) {
 				console.log(result);
 				localStorage.setItem("user_token", result.token);
-				window.location.replace("index.html");
+				
+				var redirectUrl = localStorage.getItem('redirectUrl') || 'index.html';
+				localStorage.removeItem('redirectUrl'); 
+				window.location.href = redirectUrl;
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
 				$("#signin-btn").prop("disabled", false);
@@ -182,6 +185,12 @@ var UserService = {
 		$.ajax({
 			url: "rest/users/account/" + id,
 			type: "GET",
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader(
+				  "Authorization",
+				  localStorage.getItem("user_token")
+				);
+			},
 			contentType: "application/json",
 			dataType: "json",
 			success: function (result) {
@@ -208,6 +217,12 @@ var UserService = {
 		$.ajax({
 			url: "rest/users/account/" + id,
 			type: "PUT",
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader(
+				  "Authorization",
+				  localStorage.getItem("user_token")
+				);
+			  },
 			data: JSON.stringify(entity),
 			contentType: "application/json",
 			dataType: "json",

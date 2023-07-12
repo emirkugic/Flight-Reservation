@@ -1,7 +1,5 @@
 <?php
 
-
-
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS, PATCH');
 
@@ -20,19 +18,20 @@ Flight::register('flightService', 'FlightService');
 Flight::register('seatService', 'SeatService');
 
 // middleware method for login
-Flight::route('/*', function(){
+Flight::route('/*', function () {
   //perform JWT decode
   $path = Flight::request()->url;
-  if ($path == 'users/login' || $path == '/docs.json' 
-  || $path == '/flights/search' || $path == '/flights/con-check' 
-  || $path == '/seats/reserve' || $path == '/users/signup' 
-  || $path == '/users/account/@id') return TRUE; // exclude login route from middleware
+  if (
+    $path == '/users/login' || $path == '/docs.json'
+    || $path == '/flights/search' || $path == '/flights/con-check'
+    || $path == '/seats/reserve' || $path == '/users/signup'
+  ) return TRUE;
 
   $headers = getallheaders();
-  if (!$headers['Authorization']){
+  if (!$headers['Authorization']) {
     Flight::json(["message" => "Authorization is missing"], 403);
     return FALSE;
-  }else{
+  } else {
     try {
       $decoded = (array)JWT::decode($headers['Authorization'], new Key(Config::JWT_SECRET(), 'HS256'));
       Flight::set('user', $decoded);

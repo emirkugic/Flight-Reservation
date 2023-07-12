@@ -1,5 +1,12 @@
 var PassengerService = {
     init: function () {
+        var token = localStorage.getItem('user_token');
+        if (!token) {
+            // store the current URL before being redirected
+            localStorage.setItem('redirectUrl', window.location.href);
+            window.location.href = 'login.html';
+        }
+
         $.validator.addMethod("is18orOlder", function(value, element) {
             var birthDate = new Date(value);
             var currentDate = new Date();
@@ -62,6 +69,7 @@ var PassengerService = {
                 };
                 localStorage.setItem('passengerInfo', JSON.stringify(passengerInfo));
                 form.submit();
+                window.location.href = '#purchase';
             }
         });
     },

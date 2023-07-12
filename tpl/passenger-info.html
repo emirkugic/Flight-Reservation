@@ -17,7 +17,6 @@
 		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;400;600&family=Pavanam&family=Poppins:wght@200;400;700&display=swap" rel="stylesheet" />
         
 		<script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 		<title>Passenger Information</title>
 
@@ -63,7 +62,7 @@
 
 						<div class="input-group">
 							<label for="passenger-name" class="info-form-label"> Name </label>
-							<input type="text" name="passenger-name" id="passenger-name" required />
+							<input type="text" name="passenger-name" id="passenger-name"  />
 						</div>
 
 						<div class="input-group">
@@ -74,19 +73,19 @@
 								type="text"
 								name="passenger-surname"
 								id="passenger-surname"
-								required
+								
 							/>
 						</div>
 					</div>
 
 					<div class="info-second-row">
 						<div class="input-group input-group-date">
-							<input type="date" name="date-of-birth" id="date-of-birth" required />
+							<input type="date" name="date-of-birth" id="date-of-birth"  />
 						</div>
 
 						<div class="input-group">
 							<label for="title" class="info-select-label">Title</label>
-							<select id="title" name="title" required>
+							<select id="title" name="title" >
 								<option value="male">Male</option>
 								<option value="female">Female</option>
 							</select>
@@ -98,12 +97,12 @@
 							<label for="passport" class="info-form-label">
 								Passport Number
 							</label>
-							<input type="text" name = "passport" id="passport" required />
+							<input type="text" name = "passport" id="passport"  />
 						</div>
 
 						<div class="input-group">
 							<label for="id-num" class="info-form-label"> ID Number </label>
-							<input type="text" name="id-num" id="id-num" required />
+							<input type="text" name="id-num" id="id-num"  />
 						</div>
 					</div>
 									<button class="button continue-info-btn" id="myButton" type="submit">
@@ -121,10 +120,13 @@
 				<p class="info-back-button" id="backButton">Back</p>
 			</div>
 		</section>
-
-		<script src="assets/js/navigation.js"></script>
-		<script>
-			PassengerService.init();
-		</script>
 	</body>
+
+	<script>
+		$(document).ready(function(){
+			PassengerService.init();
+		});
+
+		
+	</script>
 </html>
