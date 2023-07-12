@@ -10,5 +10,3 @@ Flight::route('POST /flights/search', function(){
     $flights = Flight::flightService()->searchFlights($request['departure_airport'], $request['departure_date'], $request['destination_airport'], $request['arrival_date']);
     Flight::json($flights);
 });
-
-?>
