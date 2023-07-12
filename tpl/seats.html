@@ -28,29 +28,6 @@
 	</head>
 
 	<body>
-		<nav class="main-navigation">
-			<img src="assets/img/logo.svg" alt="Logo" class="img-logo" id="homepage"/>
-			<img src="assets/img/mobile-logo.png" alt="Logo" class="img-logo mobile-logo" id="homepage-mobile"/>
-			<ul>
-				<li><a href="#">Help</a></li>
-				<li><a href="hotels.html">Hotels</a></li>
-				<li><a href="cars.html">Cars</a></li>
-				<li><a href="signup.html">Sign In</a></li>
-				<li>
-					<span class="last-option"><a href="#">Sign Up</a></span>
-				</li>
-			</ul>
-			<div class="hamburger-menu">&#9776;</div>
-			<div class="mobile-menu">
-				<ul>
-					<li><a href="#">Homepage</a></li>
-					<li><a href="#">Help</a></li>
-					<li><a href="hotels.html">Hotels</a></li>
-					<li><a href="cars.html">Cars</a></li>
-				</ul>
-			</div>
-		</nav>
-
 		<section class="steps steps-seat">
 			<div class="step">
 				<img src="assets/img/steps-plane-active.png" alt="" />
@@ -87,47 +64,9 @@
 			<p>Sarajevo to Amsterdam</p>
 		</div>
 
-		<div class="ticket seat-ticket">
-			<div class="time">
-				<p class="top date">15 April</p>
+		<section class="available-tickets">
 
-				<p class="bottom day">Saturday</p>
-			</div>
-
-			<div class="direction">
-				<div class="departure">
-					<div class="top departure-time">
-						<p class="date">20:00</p>
-
-						<p class="bottom departure-city">Amsterdam</p>
-					</div>
-				</div>
-
-				<div class="flight-art">
-					<p>SA 143</p>
-					<img
-						src="assets/img/flight-direction.png"
-						alt="flight direction art"
-						class="flight-art-img"
-					/>
-					<p>3 hours 15 minutes</p>
-				</div>
-
-				<div class="destination">
-					<div class="top departure-time">
-						<p class="date">23:15</p>
-
-						<p class="bottom departure-city">Sarajevo</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="price">
-				<p class="value-fare">VALUE FARE</p>
-
-				<p class="value">$64.93</p>
-			</div>
-		</div>
+		</section>
 
 		<section class="seat-picker">
 			<div class="plane">
@@ -443,11 +382,11 @@
 					<p class="seat-paragraph">SEAT</p>
 					<div class="seat-row">
 						<p class="seat-row-paragraph">ROW</p>
-						<p class="seat-row-value">E</p>
+						<p class="seat-row-value"></p>
 					</div>
 					<div class="seat-number">
 						<p class="seat-number-paragraph">NUMBER</p>
-						<p class="seat-number-value">2</p>
+						<p class="seat-number-value"></p>
 					</div>
 				</div>
 
@@ -470,72 +409,96 @@
 			</div>
 		</section>
 
-		<footer class="footer">
-			<!-- subscription part -->
-			<div class="footer-right">
-				<div class="col-2">
-					<h3>Subscribe to our news letter</h3>
-					<h4>
-						Subscribe now to get our best deals delivered straight into your
-						inbox.
-					</h4>
-					<form>
-						<input type="email" , placeholder="Email address" required />
-						<br />
-						<button type="submit">SUBSCRIBE</button>
-					</form>
-
-					<div class="icons">
-						<i class="fa-brands fa-square-twitter"></i>
-						<i class="fa-brands fa-square-instagram"></i>
-						<i class="fa-brands fa-square-facebook"></i>
-						<i class="fa-brands fa-linkedin"></i>
-						<i class="fa-brands fa-square-youtube"></i>
-					</div>
-				</div>
-
-				<!-- bottom container -->
-				<div class="bottom-container">
-					<div class="need-help">
-						<a href="#">Need Help?</a>
-						<a href="#">+387 654 123</a>
-						<a href="#">customer-support@highair.com</a>
-					</div>
-
-					<!-- link list -->
-					<div class="link-list">
-						<a href="#accessibility">Accessibility</a>
-						<a href="#eu-data-protection">EU Data Protection Rights</a>
-						<a href="#legal-notice">Legal Notice</a>
-						<a href="#cookies">Cookies</a>
-						<a href="#privacy-policy">Privacy Policy</a>
-					</div>
-
-					<!-- all rights reserved -->
-					<div class="legal-icon">
-						<img src="assets/img/footer_logo.png" alt="company logo" class="logo" />
-						<p>© 2023 HighAir. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</footer>
 		<script src="assets/js/navigation.js"></script>
 		<script>
-			document.getElementById("myButton").onclick = function () {
-				location.href = "baggage.html";
-			};
+			$(document).ready(function () {
+				var flightData = JSON.parse(localStorage.getItem('selectedFlight'));
 
-			document.getElementById("backButton").onclick = function () {
-				location.href = "tickets.html";
-			};
+				var flightHtml = `
+					<div class="ticket"> 
+						<div class="time"> 
+							<p class="top date">${flightData.departure_date}</p>
+							</div>
+						<div class="direction">
+							<div class="departure"> 
+								<div class="top departure-time"> 
+									<p class="date"> ${flightData.departure_time}</p>
+									<p class="bottom departure-city">${flightData.departure_city}</p>
+								</div>
+							</div>
+							<div class="flight-art">
+								<img src="assets/img/flight-direction.png" alt="flight direction art" class="flight-art-img"/>
+								<p>3 hours 15 minutes</p> 
+							</div>
+							<div class="destination"> 
+								<div class="top departure-time"> 
+									<p class="date">${flightData.arrival_time} </p>
+									<p class="bottom departure-city"> ${flightData.destination_city} </p>
+								</div>
+							</div>
+						</div>
+						<div class="price">
+							<p class="value-fare">VALUE FARE</p>
+							<p class="value">${flightData.price}</p>
+						</div>
+					</div>
+					`;
 
-			document.getElementById("homepage").onclick = function () {
-					location.href = "index.html";
-			};
+					$(".available-tickets").append(flightHtml);
 
-			document.getElementById("homepage-mobile").onclick = function () {
-					location.href = "index.html";
-			};
+
+				$('.continue-seat-btn').prop('disabled', true);
+
+				var seats = document.querySelectorAll('.seat input[type="checkbox"]');
+				var seatRowValue = document.querySelector('.seat-row-value');
+				var seatNumberValue = document.querySelector('.seat-number-value');
+	
+				function getSeatData(id) {
+					let row = id.slice(0, -1);
+					let number = id.slice(-1);
+					return { row, number };
+				}
+	
+				function updateSeatSelection(seatData) {
+					seatRowValue.textContent = seatData.row;
+					seatNumberValue.textContent = seatData.number;
+					localStorage.setItem('selectedSeat', JSON.stringify(seatData));
+					$('.continue-seat-btn').prop('disabled', false);
+				}
+	
+				function initializeSeatSelection() {
+					let storedSeatData = localStorage.getItem('selectedSeat');
+					if(storedSeatData) {
+						let seatData = JSON.parse(storedSeatData);
+						document.getElementById(seatData.row + seatData.number).checked = true;
+						updateSeatSelection(seatData);
+					}
+				}
+	
+				seats.forEach(function(seat) {
+					seat.addEventListener('change', function() {
+						if (this.checked) {
+							seats.forEach(function(otherSeat) {
+								if (otherSeat !== this && otherSeat.checked) {
+									otherSeat.checked = false;
+								}
+							}, this);
+	
+							let seatData = getSeatData(this.id);
+							updateSeatSelection(seatData);
+						} else {
+							$('.continue-seat-btn').prop('disabled', false);
+						}
+					});
+				});
+	
+				initializeSeatSelection();
+
+				$(".continue-seat-btn").click(function () {
+					SeatService.init();
+					window.location.href="#baggage";
+				});
+			});
 		</script>
 	</body>
 </html>

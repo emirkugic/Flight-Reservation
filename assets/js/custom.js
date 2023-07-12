@@ -13,6 +13,8 @@ $(document).ready(function() {
   app.route({view: 'cars', load: 'cars.html', onCreate: function() {}, onReady: function() {} });
   app.route({view: 'account', load: 'account.html', onCreate: function() {}, onReady: function() {} });
   app.route({view: 'tickets', load: 'tickets.html', onCreate: function() {}, onReady: function() {} });
+  app.route({view: 'seats', load: 'seats.html', onCreate: function() {}, onReady: function() {} });
+  app.route({view: 'baggage', load: 'baggage.html', onCreate: function() {}, onReady: function() {} });
   app.route({view: 'homepage', load: 'homepage.html', onCreate: function() {}, onReady: function() {} });
 
   // run app
