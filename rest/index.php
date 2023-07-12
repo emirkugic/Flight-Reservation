@@ -1,5 +1,7 @@
 <?php
 
+
+
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS, PATCH');
 
@@ -13,7 +15,6 @@ require_once __DIR__ . '/services/UserService.class.php';
 require_once __DIR__ . '/services/FlightService.class.php';
 Flight::register('userService', 'UserService');
 Flight::register('flightService', 'FlightService');
-
 // import all routes
 require_once __DIR__ . '/routes/UserRoutes.php';
 require_once __DIR__ . '/routes/FlightRoutes.php';

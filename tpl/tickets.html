@@ -132,89 +132,71 @@
 		<script src="assets/js/tickets.js"></script>
 
 		<script>
-			$(document).ready(function () {
-				var flightData = JSON.parse(localStorage.getItem("flights"));
+		$(document).ready(function () {
+			var flightData = JSON.parse(localStorage.getItem("flights"));
 
+			$("#from-input").val(flightData[0].departure_city);
+			$("#to-input").val(flightData[0].destination_city);
+			$("#departure-date").val(flightData[0].departure_date);
+			$("#return-date").val(flightData[0].arrival_date);
+			$("#ticket-class").val("Economy");
 
-				$("#from-input").val(flightData[0].departure_city);
-				$("#to-input").val(flightData[0].destination_city);
-				$("#departure-date").val(flightData[0].departure_date);
-				$("#return-date").val(flightData[0].arrival_date);
-				$("#ticket-class").val("Economy");
+			$(".modify-btn").click(function () {
+				window.location.href = "index.html";
+				localStorage.removeItem("flights");
+			});
 
-				$(".modify-btn").click(function () {
-					window.location.href = "index.html";
-					localStorage.removeItem("flights");
-				});
+			var flights = JSON.parse(localStorage.getItem("flights"));
 
+			if (flights && flights.length > 0) {
+				$(".available-tickets").empty();
 
-
-
-
-
-
-
-				var flights = JSON.parse(localStorage.getItem("flights"));
-
-				
-				if (flights && flights.length > 0) {
-					
-					$(".available-tickets").empty();
-
-				
-					flights.forEach(function (flight) {
-						console.log("lejla fina");
-
-					
-						var flightHtml = `
-						<div class="ticket"> 
-							<div class="time"> 
-								<p class="top date">${flight.departure_date}</p>
+				flights.forEach(function (flight) {
+					var flightHtml = `
+					<div class="ticket"> 
+						<div class="time"> 
+							<p class="top date">${flight.departure_date}</p>
+							</div>
+						<div class="direction">
+							<div class="departure"> 
+								<div class="top departure-time"> 
+									<p class="date"> ${flight.departure_time}</p>
+									<p class="bottom departure-city">${flight.departure_city}</p>
 								</div>
-							<div class="direction">
-
-								<div class="departure"> 
-															<div class="top departure-time"> 
-																<p class="date"> ${flight.departure_time}</p>
-																<p class="bottom departure-city">${flight.departure_city}</p>
-
-															</div>
+							</div>
+							<div class="flight-art">
+								<img src="assets/img/flight-direction.png" alt="flight direction art" class="flight-art-img"/>
+								<p>3 hours 15 minutes</p> 
+							</div>
+							<div class="destination"> 
+								<div class="top departure-time"> 
+									<p class="date">${flight.arrival_time} </p>
+									<p class="bottom departure-city"> ${flight.destination_city} </p>
 								</div>
-														<div class="flight-art">
-															<img src="assets/img/flight-direction.png" alt="flight direction art" class="flight-art-img"/>
-															<p>3 hours 15 minutes</p> 
-														</div>
-								<div class="destination"> 
-														<div class="top departure-time"> 
-														
-															<p class="date">${flight.arrival_time} </p>
-															<p class="bottom departure-city"> ${flight.destination_city} </p>
-															</div>
-									</div>
-
-								</div>
-
-								<div class="price">
-									<p class="value-fare">VALUE FARE</p>
-									<p class="value">${flight.price}</p>
-								</div>
-								<button class="button search-btn-ticket selection-2">Select</button>
 							</div>
 						</div>
-            `;
+						<div class="price">
+							<p class="value-fare">VALUE FARE</p>
+							<p class="value">${flight.price}</p>
+						</div>
+						<button id="${flight.id}" class="button search-btn-ticket selection-2">Select</button>
+					</div>
+					`;
 
+					$(".available-tickets").append(flightHtml);
 
-						
-						$(".available-tickets").append(flightHtml);
-					});
-				} else {
-				
-					$(".available-tickets").html("<p>No flights were found.</p>");
-				}
+					(function(flight) {
+						$(`#${flight.id}`).on('click', function() {
+							localStorage.setItem("selectedFlight", JSON.stringify(flight));
+							// window.location.href = "seats.html";
+						});
+					})(flight);
+				});
+			} else {
+				$(".available-tickets").html("<p>No flights were found.</p>");
+			}
+		});
+</script>
 
-
-				
-			});
-		</script>
 	</body>
 </html>
