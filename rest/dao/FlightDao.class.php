@@ -11,7 +11,7 @@ class FlightDao extends BaseDao
     public function searchFlights($departure_city, $departure_date, $destination_city, $arrival_date)
     {
         $stmt = $this->conn->prepare("
-            SELECT c1.city_name as departure_city, f.departure_date, c2.city_name as destination_city, f.arrival_date, f.departure_time, f.arrival_time, f.id 
+            SELECT c1.city_name as departure_city, f.departure_date, c2.city_name as destination_city, f.arrival_date, f.departure_time, f.arrival_time, f.id, f.price
             FROM flights f
             JOIN routes r ON f.route_id = r.id
             JOIN airports dep ON r.departure_airport = dep.airport_code
