@@ -15,43 +15,16 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;400;600&family=Pavanam&family=Poppins:wght@200;400;700&display=swap" rel="stylesheet" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/css/intlTelInput.css" rel="stylesheet" />
         
 		<script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 		<title>Passenger Information</title>
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.7/js/intlTelInput.js"></script>
-
 		<title>HighAir</title>
 		<link rel="icon" href="assets/img/logo-notext.png">
 	</head>
 	<body>
-		<nav class="main-navigation">
-			<img src="assets/img/logo.svg" alt="Logo" class="img-logo" id="homepage"/>
-			<img src="assets/img/mobile-logo.png" alt="Logo" class="img-logo mobile-logo" id="homepage-mobile"/>
-			<ul>
-				<li><a href="#">Help</a></li>
-				<li><a href="hotels.html">Hotels</a></li>
-				<li><a href="cars.html">Cars</a></li>
-				<li><a href="login.html">Sign In</a></li>
-				<li>
-					<span class="last-option"><a href="signup.html">Sign Up</a></span>
-				</li>
-			</ul>
-			<div class="hamburger-menu">&#9776;</div>
-			<div class="mobile-menu">
-				<ul>
-					<li><a href="index.html">Homepage</a></li>
-					<li><a href="#">Help</a></li>
-					<li><a href="hotels.html">Hotels</a></li>
-					<li><a href="cars.html">Cars</a></li>
-				</ul>
-			</div>
-		</nav>
-
 		<section class="steps">
 			<div class="step">
 				<img src="assets/img/steps-plane-active.png" alt="">
@@ -85,90 +58,55 @@
 
 		<section class="passenger-info-menu">
 			<div class="passenger-info">
-				<form action="">
+				<form id="passenger-form">
 					<div class="info-first-row">
-						<!-- checkbox -->
-						<div class="checkbox-container">
-							<input
-								type="checkbox"
-								id="autocomplete"
-								name="autocomplete"
-								value="autocomplete"
-							/>
-							<label for="autocomplete" class="checkbox-label">
-								Autocomplete information from my profile
-							</label>
-						</div>
-						<!-- end of checkbox -->
 
 						<div class="input-group">
-							<input type="text" id="passenger-name" placeholder=" " required />
 							<label for="passenger-name" class="info-form-label"> Name </label>
+							<input type="text" name="passenger-name" id="passenger-name" required />
 						</div>
 
 						<div class="input-group">
-							<input
-								type="text"
-								id="passenger-surname"
-								placeholder=" "
-								required
-							/>
-							<label for="passenger-surname" class="info-form-label">
+														<label for="passenger-surname" class="info-form-label">
 								Surname
 							</label>
-						</div>
-
-						<div class="input-group input-group-phone">
 							<input
-								type="tel"
-								class="form-control"
-								id="phone"
-								placeholder=" "
+								type="text"
+								name="passenger-surname"
+								id="passenger-surname"
 								required
 							/>
-							<label for="phone" class="info-form-label input-group-addon">
-								Phone Number
-							</label>
 						</div>
 					</div>
 
 					<div class="info-second-row">
 						<div class="input-group input-group-date">
-							<input type="date" id="date-of-birth" placeholder=" " required />
-							<label for="date-of-birth" class="info-form-label">
-								Date of Birth
-							</label>
+							<input type="date" name="date-of-birth" id="date-of-birth" required />
 						</div>
 
 						<div class="input-group">
-							<select id="title" placeholder=" " required>
+							<label for="title" class="info-select-label">Title</label>
+							<select id="title" name="title" required>
 								<option value="male">Male</option>
 								<option value="female">Female</option>
 							</select>
-							<label for="title" class="info-select-label">Title</label>
 						</div>
 					</div>
 
 					<div class="info-third-row">
 						<div class="input-group">
-							<input type="text" id="passport" placeholder=" " required />
 							<label for="passport" class="info-form-label">
 								Passport Number
 							</label>
+							<input type="text" name = "passport" id="passport" required />
 						</div>
 
 						<div class="input-group">
-							<input type="text" id="id-num" placeholder=" " required />
 							<label for="id-num" class="info-form-label"> ID Number </label>
+							<input type="text" name="id-num" id="id-num" required />
 						</div>
 					</div>
-				</form>
-			</div>
-
-			<div class="info-navigation-options">
-				<p class="info-back-button" id="backButton">Back</p>
-
-				<button class="button continue-info-btn" id="myButton">
+									<button class="button continue-info-btn" id="myButton" type="submit">
 					Continue
 					<img
 						src="assets/img/right-arrow.png"
@@ -176,83 +114,17 @@
 						class="continue-info-icon"
 					/>
 				</button>
+				</form>
+			</div>
+
+			<div class="info-navigation-options">
+				<p class="info-back-button" id="backButton">Back</p>
 			</div>
 		</section>
 
-		<footer class="footer">
-			<!-- subscription part -->
-			<div class="footer-right">
-				<div class="col-2">
-					<h3>Subscribe to our news letter</h3>
-					<h4>
-						Subscribe now to get our best deals delivered straight into your
-						inbox.
-					</h4>
-					<form>
-						<input type="email" , placeholder="Email address" required />
-						<br />
-						<button type="submit">SUBSCRIBE</button>
-					</form>
-
-					<div class="icons">
-						<i class="fa-brands fa-square-twitter"></i>
-						<i class="fa-brands fa-square-instagram"></i>
-						<i class="fa-brands fa-square-facebook"></i>
-						<i class="fa-brands fa-linkedin"></i>
-						<i class="fa-brands fa-square-youtube"></i>
-					</div>
-				</div>
-
-				<!-- bottom container -->
-				<div class="bottom-container">
-					<div class="need-help">
-						<a href="#">Need Help?</a>
-						<a href="#">+387 654 123</a>
-						<a href="#">customer-support@highair.com</a>
-					</div>
-
-					<!-- link list -->
-					<div class="link-list">
-						<a href="#accessibility">Accessibility</a>
-						<a href="#eu-data-protection">EU Data Protection Rights</a>
-						<a href="#legal-notice">Legal Notice</a>
-						<a href="#cookies">Cookies</a>
-						<a href="#privacy-policy">Privacy Policy</a>
-					</div>
-
-					<!-- all rights reserved -->
-					<div class="legal-icon">
-						<img src="assets/img/footer_logo.png" alt="company logo" class="logo" />
-						<p>© 2023 HighAir. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</footer>
-
 		<script src="assets/js/navigation.js"></script>
-		<script src="assets/js/passenger-info.js"></script>
-
 		<script>
-			$("#phone").intlTelInput({
-				utilsScript:
-					"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/js/utils.js",
-			});
-
-			document.getElementById("myButton").onclick = function () {
-				location.href = "purchase.html";
-			};
-
-			document.getElementById("backButton").onclick = function () {
-				location.href = "baggage.html";
-			};
-
-			document.getElementById("homepage").onclick = function () {
-					location.href = "index.html";
-			};
-
-			document.getElementById("homepage-mobile").onclick = function () {
-					location.href = "index.html";
-			};
+			PassengerService.init();
 		</script>
 	</body>
 </html>
