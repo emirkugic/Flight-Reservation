@@ -124,9 +124,9 @@
 					<p>+$10.00</p>
 				</div>
 			</form>
-		</section>
+		</section> 
 
-		<p class="additional-fee">Additional fee: <span> $6.00 </span></p>
+		<p class="additional-fee">Additional fee: <span> </span></p>
 
 		<div class="navigation-options">
 			<p class="baggage-back-button" id="backButton">Back</p>
@@ -142,5 +142,44 @@
 		</div>
 
 		<script src="assets/js/navigation.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.continue-baggage-btn').prop('disabled', true);
+
+				$('.additional-fee span').text("$0.00");
+
+				$('input[name="luggage"]').change(function() {
+					var baggage = {
+						type: null,
+						description: null,
+						price: 0
+					};
+
+					if ($('#backpack').is(':checked')) {
+						baggage.type = 'Small Backpack';
+						baggage.description = '40 x 20 x 25 cm, 1 Small bag, Fits under your seats';
+						baggage.price = 0;
+					} else if ($('#big-luggage').is(':checked')) {
+						baggage.type = 'Big Luggage';
+						baggage.description = '55 x 40 x 20 cm, 10kg Cabin Bag';
+						baggage.price = 6;
+					} else if ($('#both').is(':checked')) {
+						baggage.type = 'Both';
+						baggage.description = 'Small bag 40x20x25 cm, 55x40x20 cm 10kg Cabin Bag';
+						baggage.price = 10;
+					}
+
+					localStorage.setItem('baggageDetails', JSON.stringify(baggage));
+					$('.additional-fee span').text(`$${baggage.price.toFixed(2)}`);
+
+					$('.continue-baggage-btn').prop('disabled', false);
+				});
+
+				$('.continue-baggage-btn').click(function() {
+					var baggage = JSON.parse(localStorage.getItem('baggageDetails'));
+					//window.location.href = "index.html";
+				});
+			});
+		</script>
 	</body>
 </html>
