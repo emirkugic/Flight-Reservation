@@ -22,8 +22,6 @@ var UserService = {
 				$("#save-changes-btn").prop("disabled", true);
 				var entity = Object.fromEntries(new FormData(form).entries());
 				UserService.login(entity);
-
-				UserService.updateUser(entity);
 			},
 		});
 
@@ -229,6 +227,7 @@ var UserService = {
 			success: function (result) {
 				alert("User updated successfully");
 				UserService.populateAccountForm();
+				window.location.reload();
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
 				$("#save-changes-btn").prop("disabled", false);
