@@ -24,7 +24,7 @@ Flight::route('/*', function () {
   if (
     $path == '/users/login' || $path == '/docs.json'
     || $path == '/flights/search' || $path == '/flights/con-check'
-    || $path == '/seats/reserve' || $path == '/users/signup'
+    || $path == '/seats/reserve' || $path == '/users/signup' || $path == '/docs'
   ) return TRUE;
 
   $headers = getallheaders();
@@ -41,6 +41,13 @@ Flight::route('/*', function () {
       return FALSE;
     }
   }
+});
+
+/* REST API documentation endpoint */
+Flight::route('GET /docs.json', function () {
+  $openapi = \OpenApi\scan('routes');
+  header('Content-Type: application/json');
+  echo $openapi->toJson();
 });
 
 // import all routes
