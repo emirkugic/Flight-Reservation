@@ -17,8 +17,9 @@
 
 		<script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+		<s<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
 
 
 		<!-- bootstrap -->
@@ -28,28 +29,7 @@
         <link rel="icon" href="assets/img/logo-notext.png">
 	</head>
     <body>
-		<nav class="main-navigation">
-			<img src="assets/img/logo.svg" alt="Logo" class="img-logo" id="homepage"/>
-			<img src="assets/img/mobile-logo.png" alt="Logo" class="img-logo mobile-logo" id="homepage-mobile"/>
-			<ul>
-				<li><a href="#">Help</a></li>
-				<li><a href="hotels.html">Hotels</a></li>
-				<li><a href="cars.html">Cars</a></li>
-				<li><a href="login.html">Sign In</a></li>
-				<li>
-					<span class="last-option"><a href="signup.html">Sign Up</a></span>
-				</li>
-			</ul>
-			<div class="hamburger-menu">&#9776;</div>
-			<div class="mobile-menu">
-				<ul>
-					<li><a href="#">Homepage</a></li>
-					<li><a href="#">Help</a></li>
-					<li><a href="hotels.html">Hotels</a></li>
-					<li><a href="cars.html">Cars</a></li>
-				</ul>
-			</div>
-		</nav>
+		
 
         <section class="steps">
 			<div class="step">
@@ -82,77 +62,11 @@
 			</div>
         </section>
 
+		<div class="available-tickets"></div>
+
         <section class="ticket-overview">
-			<div class="tickets">
-				<div class="first-ticket">
-					<div class="ticket-header">
-						<img src="assets/img/logo-notext.png" alt="" class="ticket-logo">
-						<div class="ticket-flight">
-							<p>SJJ<br>Sarajevo</p>
-							<img src="assets/img/ticket-art.png" alt="" class="ticket-art">
-							<p>AMS<br>Amsterdam</p>
-						</div>
-					</div>
-					<div class="ticket-flight-info">
-						<div class="info-1">
-							<p><span>PASSENGER</span><br>John Doe</p>
-							<p><span>FLIGHT NUMBER</span><br>SA143</p>
-						</div>
-
-						<div class="info-2">
-							<p><span>DATE AND TIME</span><br>April 15, 10:00</p>
-							<p><span>SEAT</span><br>E6</p>
-						</div>
-
-						<div class="info-3">
-							<p><span>CLASS</span><br>Economy</p>
-							<p><span>GATE</span><br>3</p>
-						</div>
-					</div>
-
-					<img src="assets/img/barcode.png" alt="" class="barcode">
-				</div>
-
-				<div class="first-ticket">
-					<div class="ticket-header">
-						<img src="assets/img/logo-notext.png" alt="" class="ticket-logo">
-						<div class="ticket-flight">
-							<p>SJJ<br>Sarajevo</p>
-							<img src="assets/img/ticket-art.png" alt="" class="ticket-art">
-							<p>AMS<br>Amsterdam</p>
-						</div>
-					</div>
-					<div class="ticket-flight-info">
-						<div class="info-1">
-							<p><span>PASSENGER</span><br>John Doe</p>
-							<p><span>FLIGHT NUMBER</span><br>SA143</p>
-						</div>
-
-						<div class="info-2">
-							<p><span>DATE AND TIME</span><br>April 15, 10:00</p>
-							<p><span>SEAT</span><br>E6</p>
-						</div>
-
-						<div class="info-3">
-							<p><span>CLASS</span><br>Economy</p>
-							<p><span>GATE</span><br>3</p>
-						</div>
-					</div>
-
-					<img src="assets/img/barcode.png" alt="" class="barcode">
-				</div>
-			</div>
-
 			<div class="form-container">
 			<div class="checkout-form">
-				<div class="buttons">
-					<button class="paypal">
-						<img src="assets/img/paypal.png" alt="">
-					</button>
-					<button class="gpay">
-						<img src="assets/img/gpay.png" alt="">
-					</button>
-				</div>
 				<p>Enter credit card details</p>
 				<form action="#" id="checkout-form">
 					<div class="input-row">
@@ -160,8 +74,6 @@
 							<input type="text" id="card-num" placeholder=" " name="card-num" />
 							<label for="card-num" class="checkout-form-label"> Card Number </label>
 						</div>
-
-						<img src="assets/img/credit-card.png" alt="">
 					</div>
 
 					<div class="input-row">
@@ -199,13 +111,7 @@
 							<label for="zip-code" class="checkout-form-label"> Billing Zip Code </label>
 						</div>
 					</div>
-				</form>
-			</div>
-
-			<div class="info-navigation-options">
-				<p class="info-back-button" id="backButton">Back</p>
-
-				<button id="continue-btn" class="button continue-info-btn">
+					<button id="continue-btn" class="button continue-info-btn" type="submit">
 					Continue
 					<img
 						src="assets/img/right-arrow.png"
@@ -213,6 +119,13 @@
 						class="continue-info-icon"
 					/>
 				</button>
+				</form>
+			</div>
+
+			<div class="info-navigation-options">
+				<p class="info-back-button" id="backButton">Back</p>
+
+				
 			</div>
 
 		</div>
@@ -221,109 +134,45 @@
 
         <script src="assets/js/navigation.js"></script>
 		<script>
-			$(document).ready(function () {
-				$.validator.addMethod("dateFuture", function(value, element) {
-					var today = new Date();
-					var mm = today.getMonth() + 1;
-					var yyyy = today.getFullYear();
-					var inputDate = value.split('/');
-					var inputMonth = parseInt(inputDate[0]);
-					var inputYear = parseInt(inputDate[1]);
-					return (inputYear > yyyy) || (inputYear === yyyy && inputMonth >= mm);
-				}, 'Please enter a date in the future.');
+			$(document).ready(function(){
+				TicketService.init();
+				
+				var flightData = JSON.parse(localStorage.getItem('selectedFlight'));
 
-				// Custom method to validate the credit card number using the Luhn algorithm
-				$.validator.addMethod("luhnAlgorithm", function(value, element) {
-					var nCheck = 0, nDigit = 0, bEven = false;
-					value = value.replace(/\D/g, "");
+				var flightHtml = `
+					<div class="ticket"> 
+						<div class="time"> 
+							<p class="top date">${flightData.departure_date}</p>
+							</div>
+						<div class="direction">
+							<div class="departure"> 
+								<div class="top departure-time"> 
+									<p class="date"> ${flightData.departure_time}</p>
+									<p class="bottom departure-city">${flightData.departure_city}</p>
+								</div>
+							</div>
+							<div class="flight-art">
+								<img src="assets/img/flight-direction.png" alt="flight direction art" class="flight-art-img"/>
+								<p>3 hours 15 minutes</p> 
+							</div>
+							<div class="destination"> 
+								<div class="top departure-time"> 
+									<p class="date">${flightData.arrival_time} </p>
+									<p class="bottom departure-city"> ${flightData.destination_city} </p>
+								</div>
+							</div>
+						</div>
+						<div class="price">
+							<p class="value-fare">VALUE FARE</p>
+							<p class="value">${flightData.price}</p>
+						</div>
+					</div>
+					`;
 
-					for (var n = value.length - 1; n >= 0; n--) {
-						var cDigit = value.charAt(n),
-							nDigit = parseInt(cDigit, 10);
+					$(".available-tickets").append(flightHtml);
 
-						if (bEven && (nDigit *= 2) > 9) nDigit -= 9;
-
-						nCheck += nDigit;
-						bEven = !bEven;
-					}
-
-					return nCheck % 10 === 0;
-				}, 'Please enter a valid credit card number.');
-
-				$("#continue-btn").click(function(event){
-					event.preventDefault();
-					$("#checkout-form").submit();
-				});
-
-				$("#checkout-form").validate({
-					rules: {
-						"card-num": {
-							required: true,
-							digits: true,
-							luhnAlgorithm: true,
-							minlength: 16,
-							maxlength: 16
-						},
-						"first-name": {
-							required: true,
-							minlength: 2
-						},
-						"last-name": {
-							required: true,
-							minlength: 2
-						},
-						"exp-code": {
-							required: true,
-							dateFuture: true
-						},
-						"cvv": {
-							required: true,
-							digits: true,
-							minlength: 3,
-							maxlength: 4
-						},
-						"security-code": {
-							required: true,
-							digits: true,
-							minlength: 3,
-							maxlength: 4
-						},
-						"zip-code": {
-							required: true,
-							digits: true
-						}
-					},
-					messages: {
-						"card-num": {
-							required: "Please enter your card number.",
-							digits: "Please enter only digits.",
-							luhnAlgorithm: "Please enter a valid card number.",
-							minlength: "Your card number must be at least 16 characters long.",
-							maxlength: "Your card number must be no more than 16 characters long."
-						},
-						"exp-code": {
-							dateFuture: "Date not in future."
-						},
-					}, 
-
-					errorPlacement: function(error, element) {
-					error.insertAfter(element.siblings('label'));
-				}
-				});
+				
 			});
-		</script>
-		<script>
-			document.getElementById("backButton").onclick = function () {
-				location.href = "passenger-info.html";
-			};
-
-			document.getElementById("homepage").onclick = function () {
-					location.href = "index.html";
-			};
-
-			document.getElementById("homepage-mobile").onclick = function () {
-					location.href = "index.html";
-			};
 		</script>
     </body>
 </html>

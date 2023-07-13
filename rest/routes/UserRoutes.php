@@ -48,5 +48,3 @@ Flight::route('PUT /users/account/@id', function ($id) {
     }
 });
 
-
-

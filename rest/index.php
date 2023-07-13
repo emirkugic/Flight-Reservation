@@ -12,10 +12,14 @@ require_once '../vendor/autoload.php';
 require_once __DIR__ . '/services/UserService.class.php';
 require_once __DIR__ . '/services/FlightService.class.php';
 require_once __DIR__ . '/services/SeatService.class.php';
+require_once __DIR__ . '/services/PassengerService.class.php';
+require_once __DIR__ . '/services/BookedTicketService.class.php';
 
 Flight::register('userService', 'UserService');
 Flight::register('flightService', 'FlightService');
 Flight::register('seatService', 'SeatService');
+Flight::register('passengerService', 'PassengerService');
+Flight::register('bookedTicketService', 'BookedTicketService');
 
 // middleware method for login
 Flight::route('/*', function () {
@@ -24,7 +28,7 @@ Flight::route('/*', function () {
   if (
     $path == '/users/login' || $path == '/docs.json'
     || $path == '/flights/search' || $path == '/flights/con-check'
-    || $path == '/seats/reserve' || $path == '/users/signup'
+    || $path == '/seats/reserve' || $path == '/users/signup' || $path == '/passengers/add' || $path == '/tickets/add'
   ) return TRUE;
 
   $headers = getallheaders();
@@ -47,6 +51,8 @@ Flight::route('/*', function () {
 require_once __DIR__ . '/routes/UserRoutes.php';
 require_once __DIR__ . '/routes/FlightRoutes.php';
 require_once __DIR__ . '/routes/SeatRoutes.php';
+require_once __DIR__ . '/routes/PassengerRoutes.php';
+require_once __DIR__ . '/routes/BookedTicketRoutes.php';
 
 
 Flight::start();
