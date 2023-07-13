@@ -47,6 +47,13 @@ Flight::route('/*', function () {
   }
 });
 
+/* REST API documentation endpoint */
+Flight::route('GET /docs.json', function () {
+  $openapi = \OpenApi\scan('routes');
+  header('Content-Type: application/json');
+  echo $openapi->toJson();
+});
+
 // import all routes
 require_once __DIR__ . '/routes/UserRoutes.php';
 require_once __DIR__ . '/routes/FlightRoutes.php';
