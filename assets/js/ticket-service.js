@@ -98,6 +98,12 @@ var TicketService = {
             $.ajax({
                 url: "rest/tickets/add",
                 type: "POST",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader(
+                      "Authorization",
+                      localStorage.getItem("user_token")
+                    );
+                  },
                 data: JSON.stringify(ticket),
                 contentType: "application/json",
                 dataType: "json",

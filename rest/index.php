@@ -28,7 +28,7 @@ Flight::route('/*', function () {
   if (
     $path == '/users/login' || $path == '/docs.json'
     || $path == '/flights/search' || $path == '/flights/con-check'
-    || $path == '/seats/reserve' || $path == '/users/signup' || $path == '/passengers/add' || $path == '/tickets/add'
+    || $path == '/seats/reserve' || $path == '/users/signup'
   ) return TRUE;
 
   $headers = getallheaders();

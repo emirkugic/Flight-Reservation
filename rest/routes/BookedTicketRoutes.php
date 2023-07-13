@@ -6,7 +6,7 @@ require_once 'services/BookedTicketService.class.php';
  *     path="/tickets/add",
  *     summary="Add reserved ticket to database",
  *     description="Add ticket",
- *     tags={"Flights"},
+ *     tags={"Tickets"},
  *     @OA\RequestBody(description="Add ticket", required=true,
  *       @OA\MediaType(mediaType="application/json",
  *          @OA\Schema(

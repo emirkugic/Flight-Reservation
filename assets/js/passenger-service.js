@@ -81,6 +81,12 @@ var PassengerService = {
         $.ajax({
             url: "rest/passengers/add",
             type: "POST",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader(
+                  "Authorization",
+                  localStorage.getItem("user_token")
+                );
+              },
             data: JSON.stringify(entity),
             contentType: "application/json",
             dataType: "json",
