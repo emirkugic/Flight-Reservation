@@ -1,6 +1,8 @@
 var PassengerService = {
     init: function () {
         var token = localStorage.getItem('user_token');
+        localStorage.setItem('user_token', token);
+
         if (!token) {
             // store the current URL before being redirected
             localStorage.setItem('redirectUrl', window.location.href);
@@ -58,20 +60,41 @@ var PassengerService = {
                 'passport': 'Please enter your passport number',
                 'id-num': 'Please enter your ID number'
             },
-            submitHandler: function(form) {
-                var passengerInfo = {
-                    name: $('#passenger-name').val(),
-                    surname: $('#passenger-surname').val(),
-                    dob: $('#date-of-birth').val(),
-                    title: $('#title').val(),
-                    passport: $('#passport').val(),
-                    idNum: $('#id-num').val()
-                };
-                localStorage.setItem('passengerInfo', JSON.stringify(passengerInfo));
-                form.submit();
-                window.location.href = '#purchase';
-            }
+
+           submitHandler: function(form, event) {
+            event.preventDefault(); 
+            var passengerInfo = {
+                first_name: $('#passenger-name').val(),
+                last_name: $('#passenger-surname').val(),
+                date_of_birth: $('#date-of-birth').val(),
+                title: $('#title').val(),
+                passport: $('#passport').val(),
+                id_number: $('#id-num').val()
+            };
+            localStorage.setItem('passengerInfo', JSON.stringify(passengerInfo));
+            
+            PassengerService.addPassenger(passengerInfo);
+            },
         });
     },
+    addPassenger: function (entity) {
+        $.ajax({
+            url: "rest/passengers/add",
+            type: "POST",
+            data: JSON.stringify(entity),
+            contentType: "application/json",
+            dataType: "json",
+            success: function (result) {
+                console.log(result);
+                alert("Passenger added successfully");
+                window.location.href = '#purchase';
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log(errorThrown);
+                console.log(textStatus);
+                console.log(XMLHttpRequest);
+            },
+        });
+    }
 };
 

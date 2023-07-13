@@ -13,34 +13,36 @@ class UserService extends BaseService
   }
 
   public function login($data)
-  {
-    $user = $this->dao->login($data['email']);
+{
+  $user = $this->dao->login($data['email']);
 
-    if (count($user) > 0) {
-      $user = $user[0];
-    }
-
-    if (isset($user['id'])) {
-      if ($user['password'] == $data['password']) {
-        unset($user['password']);
-        $jwt = JWT::encode($user, Config::JWT_SECRET(), 'HS256');
-        return ["status" => true, "message" => "Login successful", "token" => $jwt];
-      } else {
-        return ["status" => false, "message" => "Wrong password"];
-      }
-    } else {
-      return ["status" => false, "message" => "User doesn't exist"];
-    }
+  if (count($user) > 0) {
+    $user = $user[0];
   }
+
+  if (isset($user['id'])) {
+    if (md5($data['password']) == $user['password']) { 
+      unset($user['password']);
+      $jwt = JWT::encode($user, Config::JWT_SECRET(), 'HS256');
+      return ["status" => true, "message" => "Login successful", "token" => $jwt];
+    } else {
+      return ["status" => false, "message" => "Wrong password"];
+    }
+  } else {
+    return ["status" => false, "message" => "User doesn't exist"];
+  }
+}
+
 
   public function addUser($user)
-  {
-    // Check for unique email
-    if (!$this->dao->isEmailUnique($user['email'])) {
-      return ['status' => 'error', 'message' => 'Email address already exists'];
-    }
-    return $this->dao->addUser($user);
+{
+  if (!$this->dao->isEmailUnique($user['email'])) {
+    return ['status' => 'error', 'message' => 'Email address already exists'];
   }
+  $user['password'] = md5($user['password']);
+
+  return $this->dao->addUser($user);
+}
 
   public function getUser($id)
   {
