@@ -5,6 +5,7 @@ require_once 'services/PassengerService.class.php';
  * @OA\Post(
  *     path="/passengers/add",
  *     summary="Add passenger to database",
+ *     security={{"ApiKeyAuth": {}}},
  *     description="Add passenger",
  *     tags={"Passengers"},
  *     @OA\RequestBody(description="Add passenger", required=true,
