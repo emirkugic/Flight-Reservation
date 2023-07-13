@@ -5,7 +5,7 @@ class Config
 
     public static function DB_HOST()
     {
-        return Config::get_env("DB_HOST", "localhost");
+        return Config::get_env("DB_HOST", "containers-us-west-117.railway.app");
     }
     public static function DB_USERNAME()
     {
@@ -13,7 +13,7 @@ class Config
     }
     public static function DB_PASSWORD()
     {
-        return Config::get_env("DB_PASSWORD", "");
+        return Config::get_env("DB_PASSWORD", "IFPSDl7C4N4TLKSUIgy1");
     }
     public static function DB_SCHEME()
     {
@@ -21,7 +21,7 @@ class Config
     }
     public static function DB_PORT()
     {
-        return Config::get_env("DB_PORT", "3306");
+        return Config::get_env("DB_PORT", "7687");
     }
     public static function JWT_SECRET()
     {
