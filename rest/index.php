@@ -23,6 +23,8 @@ Flight::register('bookedTicketService', 'BookedTicketService');
 
 // middleware method for login
 Flight::route('/*', function () {
+
+
   //perform JWT decode
   $path = Flight::request()->url;
   if (
@@ -30,7 +32,6 @@ Flight::route('/*', function () {
     || $path == '/flights/search' || $path == '/flights/con-check'
     || $path == '/seats/reserve' || $path == '/users/signup'
   ) return TRUE;
-
   $headers = getallheaders();
   if (!$headers['Authorization']) {
     Flight::json(["message" => "Authorization is missing"], 403);
